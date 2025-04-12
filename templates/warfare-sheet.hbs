@@ -1,0 +1,199 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  <div class="armyUnit">
+    <div class="armyUnit-art">
+    {{#if system.config}}
+      <img class="armyUnit-artwork" src="{{actor.img}}" alt="artwork" data-edit="img" />
+    {{else}}
+      <img class="armyUnit-artwork" src="{{actor.img}}" alt="artwork" />
+    {{/if}}
+    </div>
+    <div class="armyUnit-name">
+      {{#if system.config}}
+      <input class="armyUnit-name" type="text" data-dtype="String" name="name" value="{{actor.name}}" placeholder="UnitName">
+      {{else}}
+      <span>{{actor.name}}</span>
+      {{/if}}
+    </div>
+    {{log actor}}
+    <div class="armyUnit-text">
+      {{#if system.config}}
+      <select name='system.experience'>
+        {{selectOptions choices.EXPERIENCE selected=system.experience localize=true}}
+      </select>&nbsp;
+      <select name='system.gear'>
+        {{selectOptions choices.GEAR selected=system.gear localize=true}}
+      </select><br>
+      <select name='system.ancestry'>
+        {{selectOptions choices.ANCESTRY selected=system.ancestry}}
+      </select>&nbsp;
+      <select name='system.type'>
+        {{selectOptions choices.TYPE selected=system.type localize=true}}
+      </select>
+      {{else}}
+      <span>{{system.experience}}</span>&nbsp;
+      <span>{{system.gear}}</span><BR>
+      <span>{{system.ancestry}}</span>&nbsp;
+      <span>{{system.type}}</span>
+      {{/if}}
+    </div>
+    {{!-- <div class="armyUnit-bio">
+        <i class="fa-solid fa-scroll"></i>
+    </div> --}}
+    <div class="armyUnit-hp">
+      {{#if system.config}}
+      <span>dice</span>
+      <input class='max' type=number name='system.size.max' value='{{system.size.max}}' min='4' max='12' step='2'>
+      {{else}}
+      <input class='{{#if system.diminished }}diminished {{/if}}hitpoints' type=number name='system.size.value' value='{{system.size.value}}' min='0' max='{{system.size.max}}'>
+      <img src='modules/knw-army/Images/dice/d{{system.size.max}}.svg' >
+      {{/if}}
+    </div>
+    <div class="armyUnit-tokens">
+      <img src="/modules/knw-army/Images/ancestry/{{system.ancestry}}.png" class="armyUnitsheetimg armyUnit-token" width="50%" data-tooltip='{{system.ancestry}}'><img src="{{typeImage}}" class="armyUnitsheetimg  armyUnit-token" width="50%" data-tooltip='{{system.type}}'>
+    </div>
+    <div class="armyUnit-traitbox">
+  {{#if system.config}}
+      <span class="armyUnit-addTraits">
+        Drag and Drop a trait...<a class="armyUnit-addTrait"></a>
+      </span>
+    {{#if system.traits.length}}
+      {{#each system.traits as |trait|}}
+      <div class="onetraitbox" data-item-id="{{trait.id}}">
+        <span class="traitname">{{trait.name}}
+        {{#if trait.item}}
+          &nbsp;<a class="armyUnit-delTrait"><i class="fas fa-trash"></i></a>
+        {{/if}}
+        </span>
+        <div class="trait-description {{#if trait.expanded}}expanded{{/if}}">
+          <span>{{{trait.description.enriched}}}</span>
+        </div>
+      </div>
+      {{/each}}
+    {{/if}}
+  {{else}}
+    {{#if system.traits.length}}
+      {{#each system.traits as |trait|}}
+      <div class="onetraitbox" data-item-id="{{trait.id}}">
+        <span class="traitname">{{trait.name}}
+        </span>
+        <div class="trait-description {{#if trait.expanded}}expanded{{/if}}">
+          <span>{{{trait.description.enriched}}}</span>
+        </div>
+      </div>
+      {{/each}}
+    {{/if}}
+  {{/if}}
+    </div>
+    <div class="armyUnit-commander">
+      <span class="commander">Commander</span><br>
+      <span>{{system.commanderName}}</span>
+    </div>
+    <div class="armyUnit-stats">
+      <div class="armyUnit-lock">
+        {{#if system.config}}
+        <a class="kw-warfare-unit-config"><i class="fas fa-unlock"></i></a>
+        {{else}}
+        <a class="kw-warfare-unit-config"><i class="fas fa-lock"></i></a>
+        {{/if}}
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.atk' value='{{ coreStats.atk.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.atk.value }}</div>
+        {{/if}}
+        <div class='armyUnit-statname rollable' data-target='atk'>
+          <a>{{ coreStats.atk.label }}</a>
+        </div>
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.pow' value='{{ coreStats.pow.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.pow.value }}</div>
+        {{/if}}
+        <div class='armyUnit-statname rollable' data-target='pow'>
+          <a>{{ coreStats.pow.label }}</a>
+        </div>
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.com' value='{{ coreStats.com.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.com.value }}</div>
+        {{/if}}
+        <div class='armyUnit-statname rollable' data-target='com'>
+          <a>{{ coreStats.com.label }}</a>
+        </div>
+      </div>
+      <div class="armyUnit-statspacer">
+        <div class="armyUnit-attack">
+          <img class="armyUnitsheetimg" src="/modules/knw-army/Images/attack-sword.png">
+          {{#if system.config }}
+          <input type='text' name='system.attacks' value='{{ system.attacks }}' data-dtype='Number' />
+          {{else}}
+          <div>{{system.attacks}}x</div>
+          {{/if}}
+        </div>
+        <div class="armyUnit-dam">
+          <div class="armyUnit-dam-rhombus"></div>
+          <div class="armyUnit-dam-value">
+            {{#if system.config}}
+            <input type='text' name='system.dmg' value='{{ system.dmg }}' data-dtype='Number' />
+            {{else}}
+            <div>{{ system.dmg }}</div>
+            {{/if}}
+          </div>
+          <div class="armyUnit-dam-text">{{localize 'KNW.Warfare.Statistics.dmg.abbr'}}</div>
+        </div>
+        <div class="armyUnit-tier">
+          <div class="armyUnit-tier-rhombus"></div>
+          <div class="armyUnit-tier-text">
+            {{localize 'KNW.Warfare.Tier'}}
+            {{#if system.config}}
+            <select name='system.tier'>
+            {{selectOptions choices.TIER selected=system.tier}}
+            </select>
+            {{else}}
+            <div>{{ lvTier }}</div>
+            {{/if}}
+          </div>
+        </div>
+        <div class="armyUnit-mov">
+          <img class="armyUnitsheetimg" src="/modules/knw-army/Images/movement-arrow.png">
+          {{#if system.config }}
+          <input type='text' name='system.mov' value='{{ system.mov }}' data-dtype='Number' />
+          {{else}}
+          <div>{{system.mov}}</div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.def' value='{{ coreStats.def.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.def.value }}</div>
+        {{/if}}
+        <div class='armyUnit-statname'>{{ coreStats.def.label }}</div>
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.tou' value='{{ coreStats.tou.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.tou.value }}</div>
+        {{/if}}
+        <div class="armyUnit-statname">{{ coreStats.tou.label }}</div>
+      </div>
+      <div class="armyUnit-statblock flexcol">
+        {{#if system.config}}
+        <input class='armyUnit-statbonus value' type='text' name='system.mor' value='{{ coreStats.mor.value }}' data-dtype='Number' />
+        {{else}}
+        <div class='armyUnit-statbonus'>{{ coreStats.mor.value }}</div>
+        {{/if}}
+        <div class='armyUnit-statname rollable' data-target='mor'>
+          <a>{{ coreStats.mor.label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

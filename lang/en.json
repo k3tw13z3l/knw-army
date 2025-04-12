@@ -1,0 +1,198 @@
+{
+  "KNW": {
+    "Title": "MCDM: Kingdoms & Warfare",
+    "Warfare": {
+      "Experience": {
+        "label": "Experience",
+        "levy": "Levy",
+        "regular": "Regular",
+        "veteran": "Veteran",
+        "elite": "Elite",
+        "super-elite": "Super-Elite"
+      },
+      "Gear": {
+        "label": "Gear",
+        "light": "Light",
+        "medium": "Medium",
+        "heavy": "Heavy",
+        "super-heavy": "Super-Heavy"
+      },
+      "Type": {
+        "label": "Type",
+        "aerial": "Aerial",
+        "artillery": "Artillery",
+        "artillery-siege": "Artillery (Siege)",
+        "cavalry": "Cavalry",
+        "infantry": "Infantry"
+      },
+      "Statistics": {
+        "Test": "{stat} Test: {actorName}",
+        "atk": {
+          "long": "Attack",
+          "abbr": "ATK"
+        },
+        "def": {
+          "long": "Defense",
+          "abbr": "DEF"
+        },
+        "pow": {
+          "long": "Power",
+          "abbr": "POW"
+        },
+        "tou": {
+          "long": "Toughness",
+          "abbr": "TOU"
+        },
+        "mor": {
+          "long": "Morale",
+          "abbr": "MOR"
+        },
+        "com": {
+          "long": "Command",
+          "abbr": "COM"
+        },
+        "attacks": {
+          "long": "Number of Attacks"
+        },
+        "dmg": {
+          "long": "Damage",
+          "abbr": "DMG"
+        },
+        "size": {
+          "long": "Size"
+        },
+        "mov": {
+          "long": "Movement",
+          "abbr": "MOV"
+        }
+      },
+      "Ancestry": "Ancestry",
+      "Commander": {
+        "Label": "Commander",
+        "None": "None; drop a character on this sheet to assign",
+        "View": "View Commander",
+        "Clear": "Clear Commander",
+        "Warning": {
+          "Pack": "Warfare unit commanders cannot be stored in a compendium",
+          "NoProf": "Warfare unit commanders must have a proficiency bonus",
+          "Remove": "Removed {commanderName} as the commander of {warfareUnit}"
+        }
+      },
+      "CasualtyDie": "Casualty Die",
+      "Traits": {
+        "DialogTitle": "Traits",
+        "SheetLabel": "Traits",
+        "Instructions": "Enter a semicolon (;) separated list"
+      },
+      "Tier": "Tier",
+      "Conditions": {
+        "Broken": "Broken",
+        "Disbanded": "Disbanded",
+        "Disorganized": "Disorganized",
+        "Disoriented": "Disoriented",
+        "Exposed": "Exposed",
+        "Hidden": "Hidden",
+        "Misled": "Misled",
+        "Weakened": "Weakened"
+      }
+    },
+    "Organization": {
+      "skills": {
+        "label": "Skills",
+        "dip": "Diplomacy",
+        "esp": "Espionage",
+        "lor": "Lore",
+        "opr": "Operations",
+        "Warning": {
+          "Prof": "No proficiency bonus found",
+          "noActors": "You don't have any characters that are also a part of this organization"
+        },
+        "Test": {
+          "Title": "{skill} Test",
+          "Roll": "Roll Test",
+          "ChooseActor": "Choose an actor to roll with:",
+          "UseProf": "Use officer's proficiency bonus?",
+          "UseProfHint": "Only usable once per intrigue!",
+          "AssocSkills": "Associated Character Skills:"
+        }
+      },
+      "defenses": {
+        "label": "Defenses",
+        "com": {
+          "Label": "Communications",
+          "-3": "Broken",
+          "-2": "Garbled",
+          "-1": "Compromised",
+          "0": "Normal",
+          "1": "Secure",
+          "2": "Coded",
+          "3": "Unbreakable"
+        },
+        "rlv": {
+          "Label": "Resolve",
+          "-3": "Revolt",
+          "-2": "Rebellious",
+          "-1": "Discontented",
+          "0": "Normal",
+          "1": "Loyal",
+          "2": "Fanatic",
+          "3": "Zealous"
+        },
+        "rsc": {
+          "Label": "Resources",
+          "-3": "Bankrupt",
+          "-2": "Poor",
+          "-1": "Low",
+          "0": "Normal",
+          "1": "Surplus",
+          "2": "Abundant",
+          "3": "Booming"
+        }
+      },
+      "Features": {
+        "Label": "Features"
+      },
+      "Powers": {
+        "Label": "Powers",
+        "Die": "Power Die",
+        "RollFlavor": "Rolls their power die",
+        "Roll": "Roll Power Die",
+        "Take": "Take Power Die",
+        "TakeValue": "Takes a power die with a value of {currentValue} from the power pool of {orgName}",
+        "Rest": "Extended Rest",
+        "Decrement": "Decrement Power Die",
+        "Pool": "Power Pool",
+        "ContextMenu": {
+          "SetValue": "Set Die Value",
+          "ViewMember": "View Member",
+          "RemoveMember": "Remove Member"
+        },
+        "Warning": {
+          "RemoveMember": "Removed {memberName} from {organization}",
+          "NoPackActors": "Organizations members cannot be stored in a compendium",
+          "NoProf": "Organization Members must have a proficiency bonus",
+          "AlreadyMember": "That actor is already a member of the organization!",
+          "MustOwnRoll": "You must be an owner of the member to roll their power die!",
+          "MustOwnRest": "You must be an owner of the member to take an extended rest!"
+        }
+      },
+      "Size": "Size",
+      "Type": "Organization Type",
+      "Specialization": "Organization Specialization",
+      "Development": {
+        "Configure": "Configure Development Points",
+        "Start": "Starting Value",
+        "Spec": "Specialization Bonus",
+        "TotalDevPoints": "Total development points spent on {statGroup}: {number}"
+      }
+    },
+    "Sheets": {
+      "Warfare": "Default Warfare Sheet",
+      "Organization": "Default Organization Sheet"
+    }
+  },
+  "TYPES.Actor.knw-army": {
+    "organization": "Organization",
+    "warfare": "Warfare Unit"
+  }
+}
