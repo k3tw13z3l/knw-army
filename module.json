@@ -93,6 +93,8 @@
       ]
     }
   ],
-  "url": "https://github.com/k3tw13z3l/knw-army",
+  "url": "#{URL}#",
+  "mainfest": "#{MANIFEST}#",
+  "downlload": "#{DOWNLOAD}#",
   "readme": "README.md",
 }
