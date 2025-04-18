@@ -53,15 +53,13 @@
   "packs": [
     {
       "name": "warfare",
-      "label": "Warfare",
+      "label": "Warfare Rules",
       "path": "packs/warfare",
       "type": "JournalEntry",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
-      },
-      "system": "dnd5e",
-      "flags": {}
+      }
     },
     {
       "name": "units",
@@ -71,25 +69,30 @@
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
-      },
-      "system": "dnd5e",
-      "flags": {}
+      }
     },
     {
       "name": "traits",
-      "label": "Traits",
+      "label": "Unit Traits",
       "path": "packs/traits",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
-      },
-      "system": "dnd5e",
-      "flags": {}
+      }
     } 
   ],
-  "url": "https://github.com",
-  "readme": "https://github.com",
-  "bugs": "https://github.com",
-  "changelog": "https://github.com"
+  "packFolders": [
+    {
+      "name": "Warfare",
+      "sorting": "m",
+      "packs": [
+        "warfare",
+        "units",
+        "traits"
+      ]
+    }
+  ],
+  "url": "https://github.com/k3tw13z3l/knw-army",
+  "readme": "README.md",
 }
