@@ -20,8 +20,8 @@
       }
     ]
   },
-  "esmodules": ["./knw-army.mjs"],
-  "styles": ["./knw-army.css"],
+  "esmodules": ["./scripts/knw-army.mjs"],
+  "styles": ["./styles/knw-army.css"],
   "languages": [
     {
       "lang": "en",
