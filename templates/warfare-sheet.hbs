@@ -85,7 +85,13 @@
   {{/if}}
     </div>
     <div class="armyUnit-commander">
-      <span class="commander">Commander</span><br>
+      {{#if system.config}}
+      <span class="commander">Unit Survived battles: </span>
+      <input class='armyUnit-battles' type='text' name='system.battles' value='{{system.battles}}' data-dtype='Number' /><br>
+      {{else}}
+      <span class="commander">Commander</span>
+      <span class="armyUnit-battles"><i class="fas fa-swords"></i>&nbsp;{{system.battles}}&nbsp;</span><br>
+      {{/if}}
       <span>{{system.commanderName}}</span>
     </div>
     <div class="armyUnit-stats">

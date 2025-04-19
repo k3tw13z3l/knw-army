@@ -1,19 +1,19 @@
 @font-face {
         font-family: 'Roboto';
         font-style: normal;
-        src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+        src: url('../fonts/Roboto-Regular.woff2') format('woff2');
 }
 
 @font-face {
         font-family: 'Roboto Condensed';
         font-style: normal;
-        src: url('/fonts/RobotoCondensed-Regular.woff2') format('woff2');
+        src: url('../fonts/RobotoCondensed-Regular.woff2') format('woff2');
 }
 
 @font-face {
         font-family: 'Roboto Slab';
         font-style: normal;
-        src: url('/fonts/Roboto-Slab-Regular.woff2') format('woff2');
+        src: url('../fonts/Roboto-Slab-Regular.woff2') format('woff2');
 }
 
 
@@ -249,6 +249,19 @@
   font: 400 10px 'Roboto', sans-serif;
   font-style: italic;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+.armyUnit-commander span.armyUnit-battles {
+  font: 400 10px 'Roboto', sans-serif;
+  font-style: italic;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  float: inline-end;
+}
+
+.armyUnit-commander input {
+  font: 400 10px 'Roboto', sans-serif;
+  width: 2em;
+  height: 11px;
 }
 
 .armyUnit-commander span {

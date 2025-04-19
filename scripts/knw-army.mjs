@@ -28,6 +28,12 @@ class WarfareData extends foundry.abstract.TypeDataModel {
       commander: new fields.ForeignDocumentField(getDocumentClass("Actor"), {
         textSearch: true, label: "KNW.Warfare.Commander.Label"
       }),
+      battles: new fields.NumberField({
+        initial: 0,
+        nullable: false,
+        integer: true,
+        label: "survived"
+      }),
       ancestry: new fields.StringField({
         choices: CONFIG.KNW.CHOICES.ANCESTRY,
         initial: "human",
@@ -133,6 +139,30 @@ class WarfareData extends foundry.abstract.TypeDataModel {
           integer: true
         })
       }, {label: "KNW.Warfare.Statistics.size.long"}),
+      attributes: new fields.SchemaField({
+        movement: new fields.SchemaField({
+          units: new fields.StringField({
+            initial: "ft"
+          }),
+          walk: new fields.NumberField({
+            required: true,
+            initial: 5,
+            integer: true
+          }),
+        }),
+        hp: new fields.SchemaField({
+          max: new fields.NumberField({
+            required: true,
+            initial: 0,
+            integer: true
+          }),
+          value: new fields.NumberField({
+            required: true,
+            initial: 0,
+            integer: true
+          })
+        }),
+      }),      
       config: new fields.BooleanField({
         required: true,
         initial: true,
