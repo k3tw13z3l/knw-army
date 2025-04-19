@@ -260,7 +260,7 @@ class WarfareSheet extends ActorSheet {
     const system = this.actor.system;
     if (system.traits === undefined) system.traits = [];
     const aTrait = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry].trait
-    const compendiumTraits = game.packs.get('world.army').index.filter((item) => (aTrait.includes(item.name)));
+    const compendiumTraits = game.packs.get('knw-army.traits').index.filter((item) => (aTrait.includes(item.name)));
     const itemTraits = this.actor.items.filter((item) => (item.type='feat'));
 
    // ancestral traits
