@@ -15,13 +15,18 @@
         "type": "system",
         "compatibility": {
           "minimum": "4.3",
-          "verified": "4.3.5"
+          "verified": "4.3.5",
+          "maximum": "4.9.9"
         }
       }
     ]
   },
-  "esmodules": ["./scripts/knw-army.mjs"],
-  "styles": ["./styles/knw-army.css"],
+  "esmodules": [
+    "scripts/knw-army.mjs"
+  ],
+  "styles": [
+    "styles/knw-army.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -43,11 +48,9 @@
   },
   "authors": [
     {
-      "name": "pascal",
+      "name": "Pascal",
       "discord": "k3tw13z3l",
-      "email": "",
-      "url": "https://",
-      "flags": {}
+      "url": "https://github.com/k3tw13z3l"
     }
   ],
   "packs": [
@@ -96,5 +99,5 @@
   "url": "#{URL}#",
   "mainfest": "#{MANIFEST}#",
   "downlload": "#{DOWNLOAD}#",
-  "readme": "README.md",
+  "readme": "README.md"
 }
