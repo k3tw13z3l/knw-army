@@ -97,7 +97,7 @@
     }
   ],
   "url": "#{URL}#",
-  "mainfest": "#{MANIFEST}#",
+  "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
   "readme": "README.md"
 }
