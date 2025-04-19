@@ -1,6 +1,6 @@
 # Just the Warfare Actors with a charcter sheet design based on:
 
-Fan implementation of Warfare Units for MCDM's [Kingdoms & Warfare](https://shop.mcdmproductions.com/collections/kingdoms-warfare) as v11 subtypes for FVTT's dnd5e system.
+Fan implementation of Warfare Units of Kingdoms & Warfare
 
 ## Using this module
 
