@@ -1,10 +1,14 @@
-# Just the Warfare Actors with a charcter sheet design based on:
+# Warfare
 
 Fan implementation of Warfare Units of Kingdoms & Warfare
 
+Based and adapted from the kingdom and Warfare actors package of JP Meeham (https://github.com/JPMeehan/knw-actors).
+
+
 ## Using this module
 
-This module provides a character sheets for Warfare Units, The design is based on the mockups on figma from....
+This module provides a character sheets for Warfare Units, The design is based on the mockups on figma from CaelReader
+https://www.figma.com/design/uKegjyhlTGahuezVHQ09XO/Custom-Units---KnW?node-id=0-1&p=f&t=2Imcqe85cZuBGpdV-0
 
 ### Units
 
