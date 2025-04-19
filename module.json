@@ -98,6 +98,6 @@
   ],
   "url": "#{URL}#",
   "mainfest": "#{MANIFEST}#",
-  "downlload": "#{DOWNLOAD}#",
+  "download": "#{DOWNLOAD}#",
   "readme": "README.md"
 }
