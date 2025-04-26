@@ -469,16 +469,25 @@ input.armyUnit-statbonus[type="number"] {
 
 .armyUnit-mov input {
   position: relative;
-  color: black;
   text-align: center;
-  font: 900 36px 'Roboto', sans-serif;
-  top: -81px;
+  font: 900 20px 'Roboto', sans-serif;
+  width: 2em;
+  top: 0px;
 }
 
-.armyUnit-mov div {
+.armyUnit-mov-combat {
   position: relative;
   color: black;
   text-align: center;
-  font: 900 36px 'Roboto', sans-serif;
+  font: 900 20px 'Roboto', sans-serif;
   top: -60px;
 }
+
+.armyUnit-mov-land {
+  position: relative;
+  color: black;
+  text-align: center;
+  font: 900 20px 'Roboto', sans-serif;
+  top: -55px;
+}
+

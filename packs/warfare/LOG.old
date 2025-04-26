@@ -1,4 +1,4 @@
-2025/04/18-21:04:53.529341 7f6531b89b38 Table #18: 16 entries OK
-2025/04/18-21:04:53.552857 7f6531b89b38 Table #29: 4 entries OK
-2025/04/18-21:04:53.553518 7f6531b89b38 Archiving /data/foundryvtt/Data/modules/knw-army/packs/warfare/MANIFEST-000001: OK
-2025/04/18-21:04:53.641329 7f6531b89b38 **** Repaired leveldb /data/foundryvtt/Data/modules/knw-army/packs/warfare; recovered 2 files; 43291 bytes. Some data may have been lost. ****
+2025/04/20-14:07:05.388162 7f31f2c9eb38 Log #29: 0 ops saved to Table #32 OK
+2025/04/20-14:07:05.388245 7f31f2c9eb38 Archiving /data/foundryvtt/Data/modules/knw-army/packs/warfare/000029.log: OK
+2025/04/20-14:07:05.388917 7f31f2c9eb38 Table #31: 16 entries OK
+2025/04/20-14:07:05.502462 7f31f2c9eb38 **** Repaired leveldb /data/foundryvtt/Data/modules/knw-army/packs/warfare; recovered 1 files; 32864 bytes. Some data may have been lost. ****

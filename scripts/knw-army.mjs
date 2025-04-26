@@ -146,7 +146,7 @@ class WarfareData extends foundry.abstract.TypeDataModel {
           }),
           walk: new fields.NumberField({
             required: true,
-            initial: 5,
+            initial: 4,
             integer: true
           }),
         }),
