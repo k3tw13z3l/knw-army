@@ -1,4 +1,15 @@
-2025/04/20-14:07:05.388162 7f31f2c9eb38 Log #29: 0 ops saved to Table #32 OK
-2025/04/20-14:07:05.388245 7f31f2c9eb38 Archiving /data/foundryvtt/Data/modules/knw-army/packs/warfare/000029.log: OK
-2025/04/20-14:07:05.388917 7f31f2c9eb38 Table #31: 16 entries OK
-2025/04/20-14:07:05.502462 7f31f2c9eb38 **** Repaired leveldb /data/foundryvtt/Data/modules/knw-army/packs/warfare; recovered 1 files; 32864 bytes. Some data may have been lost. ****
+2025/04/26-14:48:47.078140 7f6531b89b38 Recovering log #34
+2025/04/26-14:48:47.202343 7f6531b89b38 Delete type=0 #34
+2025/04/26-14:48:47.202401 7f6531b89b38 Delete type=0 #29
+2025/04/26-14:48:47.202427 7f6531b89b38 Delete type=3 #33
+2025/04/28-08:43:45.648486 7f632c223b38 Level-0 table #38: started
+2025/04/28-08:43:45.732897 7f632c223b38 Level-0 table #38: 35491 bytes OK
+2025/04/28-08:43:45.775052 7f632c223b38 Delete type=0 #36
+2025/04/28-08:43:45.968905 7f632c223b38 Manual compaction at level-0 from '!journal!8777M6BFSUG1WO7A' @ 72057594037927935 : 1 .. '!journal.pages!f1m2QL02DUD5lF6T.lz2BtoFJJF0yEWut' @ 0 : 0; will stop at '!journal.pages!f1m2QL02DUD5lF6T.lz2BtoFJJF0yEWut' @ 14 : 1
+2025/04/28-08:43:45.968926 7f632c223b38 Compacting 2@0 + 0@1 files
+2025/04/28-08:43:46.014339 7f632c223b38 Generated table #39@0: 17 keys, 35976 bytes
+2025/04/28-08:43:46.014377 7f632c223b38 Compacted 2@0 + 0@1 files => 35976 bytes
+2025/04/28-08:43:46.054060 7f632c223b38 compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/04/28-08:43:46.054226 7f632c223b38 Delete type=2 #31
+2025/04/28-08:43:46.054350 7f632c223b38 Delete type=2 #38
+2025/04/28-08:43:46.054518 7f632c223b38 Manual compaction at level-0 from '!journal.pages!f1m2QL02DUD5lF6T.lz2BtoFJJF0yEWut' @ 14 : 1 .. '!journal.pages!f1m2QL02DUD5lF6T.lz2BtoFJJF0yEWut' @ 0 : 0; will stop at (end)
