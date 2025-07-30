@@ -16,8 +16,6 @@
         src: url('../fonts/Roboto-Slab-Regular.woff2') format('woff2');
 }
 
-
-
 .armyUnit {
   background: black;
   padding: 17px;
@@ -103,15 +101,16 @@
 
 .armyUnit-text span {
   color: #ffffff;
-  font: 500 25px 'Roboto', sans-serif;
+  font: 500 22px 'Roboto', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
   text-transform: capitalize;
   text-align: left;
 }
 .armyUnit-text select {
   color: #fff;
-  font: 500 25px 'Roboto', sans-serif;
+  font: 500 19px 'Roboto', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
+  height: auto;
   text-transform: capitalize;
 }
 
@@ -136,7 +135,7 @@
   border-radius: 20px/20px;
   background: rgba(230, 230, 230, 0.4);
   position: relative;
-  top: -500px;
+  top: -495px;
   left: 573px;
   z-index: 2;
   width: 100px;
@@ -151,6 +150,7 @@
   position: relative;
   border: 0px;
   width: 70px;
+  left: 15px;
   z-index: 2;
   filter: opacity(0.5) invert(90%) sepia(79%) saturate(1%) hue-rotate(39deg) brightness(85%) contrast(88%);
 }
@@ -180,11 +180,11 @@
   background: rgba(200, 200, 200, 0.2);
   position: relative;
   top: -490px;
-  left: 550px;
-  z-index: 3;
+  left: 573px;
+  z-index: 2;
   color: #000;
-  width: 120px;
-  text-align: center;
+  width: 100px;
+  display: flex;
 }
 
 .armyUnit-token {
@@ -194,7 +194,7 @@
 .armyUnit-traitbox {
   color: white;
   position: relative;
-  top: -500px;
+  top: -470px;
   left: 17px;
   z-index: 2;
   height: 220px;
@@ -241,7 +241,7 @@
   color: black;
   position: relative;
   width: 265px;
-  top: -542px;
+  top: -521px;
   left: 411px;
 }
 
@@ -277,7 +277,7 @@
   padding: 7px;
   border-style: solid;
   z-index: 3;
-  top: -526px;
+  top: -505px;
   left: 11px;
   background: white;
 }
