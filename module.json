@@ -4,8 +4,8 @@
   "description": "Warfare Units from MCDM's Kingdoms &amp; Warfare as actor types for the dnd5e system using v12 Module subtypes",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12.331",
+    "minimum": "13",
+    "verified": "13.346",
     "maximum": "13.999"
   },
   "relationships": {
@@ -15,7 +15,7 @@
         "type": "system",
         "compatibility": {
           "minimum": "4.3",
-          "verified": "4.3.5",
+          "verified": "5.0.4",
           "maximum": "5.9.9"
         }
       }
