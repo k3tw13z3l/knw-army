@@ -90,7 +90,7 @@
       <input class='armyUnit-battles' type='text' name='system.battles' value='{{system.battles}}' data-dtype='Number' /><br>
       {{else}}
       <span class="commander">Commander</span>
-      <span class="armyUnit-battles"><i class="fas fa-swords"></i>&nbsp;{{system.battles}}&nbsp;</span><br>
+      <span class="armyUnit-battles"><i data-tooltip="Survived Battles" class="fas fa-swords"></i>&nbsp;{{system.battles}}&nbsp;</span><br>
       {{/if}}
       <span>{{system.commanderName}}</span>
     </div>
@@ -109,7 +109,7 @@
         <div class='armyUnit-statbonus'>{{ coreStats.atk.value }}</div>
         {{/if}}
         <div class='armyUnit-statname rollable' data-target='atk'>
-          <a>{{ coreStats.atk.label }}</a>
+          <a data-tooltip="Attack">{{ coreStats.atk.label }}</a>
         </div>
       </div>
       <div class="armyUnit-statblock flexcol">
@@ -119,7 +119,7 @@
         <div class='armyUnit-statbonus'>{{ coreStats.pow.value }}</div>
         {{/if}}
         <div class='armyUnit-statname rollable' data-target='pow'>
-          <a>{{ coreStats.pow.label }}</a>
+          <a data-tooltip="Power">{{ coreStats.pow.label }}</a>
         </div>
       </div>
       <div class="armyUnit-statblock flexcol">
@@ -129,7 +129,7 @@
         <div class='armyUnit-statbonus'>{{ coreStats.com.value }}</div>
         {{/if}}
         <div class='armyUnit-statname rollable' data-target='com'>
-          <a>{{ coreStats.com.label }}</a>
+          <a data-tooltip="Command">{{ coreStats.com.label }}</a>
         </div>
       </div>
       <div class="armyUnit-statspacer">
@@ -171,8 +171,8 @@
           <div class="armyUnit-mov-combat"><i class="fas fa-swords"></i><input type='text' name='system.mov' value='{{ system.mov }}' data-dtype='Number' /></div>
           <div class="armyUnit-mov-land"><i class="fas fa-person-hiking"></i><input type='text' name='system.attributes.movement.walk' value='{{ system.attributes.movement.walk }}' data-dtype='Number' /></div>
           {{else}}
-          <div class="armyUnit-mov-combat"><i class="fas fa-swords"></i>&nbsp;{{ system.mov }}</div>
-          <div class="armyUnit-mov-land"><i class="fas fa-person-hiking"></i>&nbsp;{{ system.attributes.movement.walk }}</div>
+          <div class="armyUnit-mov-combat" data-tooltip="Move in combat"><i class="fas fa-swords" data-tooltop></i>&nbsp;{{ system.mov }}</div>
+          <div class="armyUnit-mov-land" data-tooltip="Move hexes"><i class="fas fa-person-hiking"></i>&nbsp;{{ system.attributes.movement.walk }}</div>
           {{/if}}
         </div>
       </div>
@@ -182,7 +182,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.def.value }}</div>
         {{/if}}
-        <div class='armyUnit-statname'>{{ coreStats.def.label }}</div>
+        <div data-tooltip="Defense" class='armyUnit-statname'>{{ coreStats.def.label }}</div>
       </div>
       <div class="armyUnit-statblock flexcol">
         {{#if system.config}}
@@ -190,7 +190,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.tou.value }}</div>
         {{/if}}
-        <div class="armyUnit-statname">{{ coreStats.tou.label }}</div>
+        <div data-tooltip="Toughness" class="armyUnit-statname">{{ coreStats.tou.label }}</div>
       </div>
       <div class="armyUnit-statblock flexcol">
         {{#if system.config}}
@@ -199,7 +199,7 @@
         <div class='armyUnit-statbonus'>{{ coreStats.mor.value }}</div>
         {{/if}}
         <div class='armyUnit-statname rollable' data-target='mor'>
-          <a>{{ coreStats.mor.label }}</a>
+          <a data-tooltip="Morale">{{ coreStats.mor.label }}</a>
         </div>
       </div>
     </div>
