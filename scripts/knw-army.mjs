@@ -576,39 +576,51 @@ const KNWCONFIG = {
  * @param {JQuery} html
  * @param {object} context
  */
-function warfareTokenBar(app, html, context) {
-  const barSelects = html.find(".bar-attribute");
-  barSelects.find("option:gt(0)").remove();
-  for (const grp of barSelects.find("optgroup")) {
-    switch (grp.label) {
-      case game.i18n.localize("TOKEN.BarAttributes"):
-        grp.innerHTML = `<option value="size">${game.i18n.localize(
-          "KNW.Warfare.Statistics.size.long"
-        )}</option>`;
-        break;
-      case game.i18n.localize("TOKEN.BarValues"):
-        grp.innerHTML = ["attacks", "def", "tou"]
-          .map(
-            (abbr) =>
-              `<option value="${abbr}">${game.i18n.localize(
-                `KNW.Warfare.Statistics.${abbr}.long`
+function warfareTokenBar(app, html, context, options) {
+  const barSelects = html.querySelectorAll("select[name=\"bar1.attribute\"], select[name=\"bar2.attribute\"]");
+  for (const bar of barSelects)) {
+   let skipFirst = true;
+    for (const el of bar.querySelectorAll("option")) {
+      if (skipFirst) {
+        skipFirst = false;
+        continue;
+      }
+      el.remove();
+    }
+    for (const grp of bar.querySelectorAll("optgroup")) {
+      switch (grp.label) {
+        case game.i18n.localize("TOKEN.BarAttributes"):
+          grp.innerHTML = `<option value="size">${game.i18n.localize(
+            "KNW.Warfare.Statistics.size.long"
+          )}</option>`;
+          break;
+        case game.i18n.localize("TOKEN.BarValues"):
+          grp.innerHTML = ["attacks", "def", "tou"]
+            .map(
+              (abbr) =>
+                `<option value="${abbr}">${game.i18n.localize(
+                  `KNW.Warfare.Statistics.${abbr}.long`
+                )}</option>`
+            )
+            .join("")
+            .concat(
+              `<option value="tier">${game.i18n.localize(
+                "KNW.Warfare.Tier"
               )}</option>`
-          )
-          .join("")
-          .concat(
-            `<option value="tier">${game.i18n.localize(
-              "KNW.Warfare.Tier"
-            )}</option>`
-          );
-        break;
-      case game.i18n.localize("DND5E.MovementSpeeds"):
-        grp.innerHTML = `<option value="mov">${game.i18n.localize(
-          "KNW.Warfare.Statistics.mov.long"
-        )}</option>`;
-        break;
+            );
+          break;
+        case game.i18n.localize("DND5E.MovementSpeeds"):
+          grp.innerHTML = `<option value="mov">${game.i18n.localize(
+            "KNW.Warfare.Statistics.mov.long"
+          )}</option>`;
+          break;
+        default:
+          grp.remove();
+      }
     }
   }
-}
+
+} 
 
 const moduleID = "knw-army";
 const typeWarfare = "knw-army.warfare";
@@ -701,10 +713,10 @@ Hooks.on("ready", () => {
   }
 });
 
-Hooks.on("renderTokenConfig5e", (app, html, context) => {
+Hooks.on("renderTokenConfig5e", (app, html, contexti, options) => {
   switch (app.actor.type) {
     case typeWarfare:
-      warfareTokenBar(app, html);
+      warfareTokenBar(app, html, context,options);
       break;
   }
 });
