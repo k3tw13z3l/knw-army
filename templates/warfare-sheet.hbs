@@ -42,10 +42,10 @@
     <div class="armyUnit-hp">
       {{#if system.config}}
       <span>dice</span>
-      <input class='max' type=number name='system.size.max' value='{{system.size.max}}' min='4' max='12' step='2'>
+      <input class='max' type=number name='system.attributes.hp.max' value='{{system.attributes.hp.max}}' min='4' max='12' step='2'>
       {{else}}
-      <input class='{{#if system.diminished }}diminished {{/if}}hitpoints' type=number name='system.size.value' value='{{system.size.value}}' min='0' max='{{system.size.max}}'>
-      <img src='modules/knw-army/Images/dice/d{{system.size.max}}.svg' >
+      <input class='{{#if system.diminished }}diminished {{/if}}hitpoints' type=number name='system.attributes.hp.value' value='{{system.attributes.hp.value}}' min='0' max='{{system.attributes.hp.max}}'>
+      <img src='modules/knw-army/Images/dice/d{{system.attributes.hp.max}}.svg' >
       {{/if}}
     </div>
     <div class="armyUnit-tokens">

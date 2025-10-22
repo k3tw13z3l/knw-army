@@ -15,9 +15,9 @@
  * @prop {number} dmg
  * @prop {number} mov
  * @prop {number} tier
- * @prop {object} size
- * @prop {number} size.value
- * @prop {number} size.max
+ * @prop {object} size  -> hp
+ * @prop {number} size.value -> hp.value
+ * @prop {number} size.max -> hp.max
  * @prop {string} traitList
  */
 class WarfareData extends foundry.abstract.TypeDataModel {
@@ -127,18 +127,6 @@ class WarfareData extends foundry.abstract.TypeDataModel {
         integer: true,
         label: "KNW.Warfare.Tier"
       }),
-      size: new fields.SchemaField({
-        max: new fields.NumberField({
-          required: true,
-          initial: 6,
-          integer: true
-        }),
-        value: new fields.NumberField({
-          required: true,
-          initial: 6,
-          integer: true
-        })
-      }, {label: "KNW.Warfare.Statistics.size.long"}),
       attributes: new fields.SchemaField({
         movement: new fields.SchemaField({
           units: new fields.StringField({
@@ -153,12 +141,12 @@ class WarfareData extends foundry.abstract.TypeDataModel {
         hp: new fields.SchemaField({
           max: new fields.NumberField({
             required: true,
-            initial: 0,
+            initial: 6,
             integer: true
           }),
           value: new fields.NumberField({
             required: true,
-            initial: 0,
+            initial: 6,
             integer: true
           })
         }),
@@ -182,7 +170,7 @@ class WarfareData extends foundry.abstract.TypeDataModel {
    * @returns {number} Current units remaining for a battle
    */
   get casualtyDie() {
-    return this.size.value;
+    return this.attributes.hp.value;
   }
 
   get commanderName() {
@@ -347,7 +335,7 @@ class WarfareSheet extends ActorSheet {
 
   get dimCheck() {
      const system = this.actor.system;
-     if ( (system.size.value <= ( system.size.max / 2 ))) { 
+     if ( (system.attributes.hp.value <= ( system.attributes.hp.max / 2 ))) { 
        if ( system.diminished || !CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry].diminishable ) return;
        ui.notifications.warn("Succeed on a morale check DC13 or gain 1 Dam");
        return this.actor.update({"system.diminished" : true});
@@ -578,7 +566,7 @@ const KNWCONFIG = {
  */
 function warfareTokenBar(app, html, context, options) {
   const barSelects = html.querySelectorAll("select[name=\"bar1.attribute\"], select[name=\"bar2.attribute\"]");
-  for (const bar of barSelects)) {
+  for (const bar of barSelects) {
    let skipFirst = true;
     for (const el of bar.querySelectorAll("option")) {
       if (skipFirst) {
@@ -642,7 +630,6 @@ Hooks.once("init", () => {
     id: "broken",
     name: "KNW.Warfare.Conditions.Broken",
     img: "systems/dnd5e/icons/svg/statuses/incapacitated.svg",
-    description: "A unit that breaks becomes broken. It has lost its last casualty and is removed from the battle. Broken units can be reformed, usually by rallying.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -650,7 +637,6 @@ Hooks.once("init", () => {
     id: "disbanded",
     name: "KNW.Warfare.Conditions.Disbanded",
     img: "systems/dnd5e/icons/svg/statuses/dead.svg",
-    description: "A disbanded unit is removed from the game and cannot be reformed by normal means.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -658,7 +644,6 @@ Hooks.once("init", () => {
     id: "disorganized",
     name: "KNW.Warfare.Conditions.Disorganized",
     img: "systems/dnd5e/icons/svg/statuses/stunned.svg",
-    description: "A disorganised unit does nothing on its next activation while it attempts to regain unit cohesion.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -666,7 +651,6 @@ Hooks.once("init", () => {
     id: "disoriented",
     name: "KNW.Warfare.Conditions.Disoriented",
     img: "modules/knw-army/assets/icons/disoriented.svg",
-    description: "A disoriented unit can either take an action or move, but not both. Unless otherwise stated, this unit condition lasts until the end of the unit's next activation.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -674,7 +658,6 @@ Hooks.once("init", () => {
     id: "exposed",
     name: "KNW.Warfare.Conditions.Exposed",
     img: "modules/knw-army/assets/icons/exposed.svg",
-    description: "A unit is exposed if there are no units between it and the leftmost or rightmost battlefield edge, or if there are no units in any rank to the rear of the unit. Units in the center and reserve of an army's ranks cannot be exposed as long as that army has its own units in both its rear rank and anywhere in its front.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -682,7 +665,6 @@ Hooks.once("init", () => {
     id: "hidden",
     name: "KNW.Warfare.Conditions.Hidden",
     img: "systems/dnd5e/icons/svg/statuses/hiding.svg",
-    description: "When a unit is hidden, other units have disadvantage on Attack tests against it.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -690,7 +672,6 @@ Hooks.once("init", () => {
     id: "misled",
     name: "KNW.Warfare.Conditions.Misled",
     img: "systems/dnd5e/icons/svg/statuses/surprised.svg",
-    description: "A unit that is misled cannot attack, and spends its next activation moving randomly into an available space. Cavalry and aerial units cannot be misled.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -698,7 +679,6 @@ Hooks.once("init", () => {
     id: "weakened",
     name: "KNW.Warfare.Conditions.Weakened",
     img: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
-    description: "A unit that is weakened has disadvantage on Attack tests and Power tests.",
     hud: {
       actorTypes: [typeWarfare]
     }
@@ -707,16 +687,17 @@ Hooks.once("init", () => {
 
 Hooks.on("ready", () => {
   const actorTypes = Object.keys(game.model.Actor).filter(t => !t.startsWith("knw-army"));
+  const debug = CONFIG.statusEffects;
   for (const status of CONFIG.statusEffects) {
     if ("hud" in status) continue;
     status.hud = {actorTypes};
   }
 });
 
-Hooks.on("renderTokenConfig5e", (app, html, contexti, options) => {
+Hooks.on("renderTokenConfig5e", (app, html, context, options) => {
   switch (app.actor.type) {
     case typeWarfare:
-      warfareTokenBar(app, html, context,options);
+      warfareTokenBar(app, html, context, options);
       break;
   }
 });
