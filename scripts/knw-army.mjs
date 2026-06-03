@@ -415,7 +415,7 @@ class WarfareSheet extends ActorSheet {
       this._deleteItem.bind(this)
     );
 
-    ContextMenu.create(this, html, ".armyUnit-commander", this.commanderMenu);
+    ContextMenu.create(this, html[0], ".armyUnit-commander", this.commanderMenu);
   }
 
   /**
