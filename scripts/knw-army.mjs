@@ -1,220 +1,6 @@
-/**
- * Data Definition for Warfare actors
- * @prop {string} commander
- * @prop {string} ancestry
- * @prop {string} experience
- * @prop {string} gear
- * @prop {string} type
- * @prop {number} atk
- * @prop {number} def
- * @prop {number} pow
- * @prop {number} tou
- * @prop {number} mor
- * @prop {number} com
- * @prop {number} attacks
- * @prop {number} dmg
- * @prop {number} mov
- * @prop {number} tier
- * @prop {object} size  -> hp
- * @prop {number} size.value -> hp.value
- * @prop {number} size.max -> hp.max
- * @prop {string} traitList
- */
-class WarfareData extends foundry.abstract.TypeDataModel {
-  /** @override */
-  static defineSchema() {
-    const fields = foundry.data.fields;
-    const data = {
-      commander: new fields.ForeignDocumentField(getDocumentClass("Actor"), {
-        textSearch: true, label: "KNW.Warfare.Commander.Label"
-      }),
-      battles: new fields.NumberField({
-        initial: 0,
-        nullable: false,
-        integer: true,
-        label: "survived"
-      }),
-      ancestry: new fields.StringField({
-        choices: CONFIG.KNW.CHOICES.ANCESTRY,
-        initial: "human",
-        textSearch: true, label: "KNW.Warfare.Ancestry"
-      }),
-      experience: new fields.StringField({
-        choices: CONFIG.KNW.CHOICES.EXPERIENCE,
-        initial: "regular",
-        textSearch: true,
-        label: "KNW.Warfare.Experience.Label"
-      }),
-      gear: new fields.StringField({
-        choices: CONFIG.KNW.CHOICES.GEAR,
-        initial: "light",
-        textSearch: true,
-        label: "KNW.Warfare.Gear.Label"
-      }),
-      type: new fields.StringField({
-        choices: CONFIG.KNW.CHOICES.TYPE,
-        initial: "infantry",
-        textSearch: true,
-        label: "KNW.Warfare.Type.Label"
-      }),
-      atk: new fields.NumberField({
-        required: true,
-        initial: 0,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.atk.long"
-      }),
-      def: new fields.NumberField({
-        required: true,
-        initial: 10,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.def.long"
-      }),
-      pow: new fields.NumberField({
-        required: true,
-        initial: 0,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.pow.long"
-      }),
-      tou: new fields.NumberField({
-        required: true,
-        initial: 10,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.tou.long"
-      }),
-      mor: new fields.NumberField({
-        required: true,
-        initial: 0,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.mor.long"
-      }),
-      com: new fields.NumberField({
-        required: true,
-        initial: 0,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.com.long"
-      }),
-      attacks: new fields.NumberField({
-        required: true,
-        initial: 1,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.attacks.long"
-      }),
-      dmg: new fields.NumberField({
-        required: true,
-        initial: 1,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.dmg.long"
-      }),
-      mov: new fields.NumberField({
-        required: true,
-        initial: 1,
-        nullable: false,
-        integer: true,
-        label: "KNW.Warfare.Statistics.move.long"
-      }),
-      tier: new fields.NumberField({
-        required: true,
-        initial: 1,
-        choices: CONFIG.KNW.CHOICES.TIER,
-        integer: true,
-        label: "KNW.Warfare.Tier"
-      }),
-      attributes: new fields.SchemaField({
-        movement: new fields.SchemaField({
-          units: new fields.StringField({
-            initial: "ft"
-          }),
-          walk: new fields.NumberField({
-            required: true,
-            initial: 4,
-            integer: true
-          }),
-        }),
-        hp: new fields.SchemaField({
-          max: new fields.NumberField({
-            required: true,
-            initial: 6,
-            integer: true
-          }),
-          value: new fields.NumberField({
-            required: true,
-            initial: 6,
-            integer: true
-          })
-        }),
-      }),      
-      config: new fields.BooleanField({
-        required: true,
-        initial: true,
-        label: "enable edit"
-      }),
-      diminished: new fields.BooleanField({
-        required: true,
-        initial: false,
-        label: "Hit hard"
-      })
-    };
-
-    return data;
-  }
-
-  /**
-   * @returns {number} Current units remaining for a battle
-   */
-  get casualtyDie() {
-    return this.attributes.hp.value;
-  }
-
-  get commanderName() {
-    const commander = this.commander;
-    if (commander) return commander.name;
-    else return game.i18n.localize("KNW.Warfare.Commander.None");
-  }
-
-  /**
-   * Rolls one of the Warfare unit's stats
-   * @param {string} stat     Warfare stat to roll
-   * @param {Event} [event]   Optional event
-   */
-  async rollStat(stat, event) {
-    return CONFIG.Dice.D20Roll.build({
-      rolls: [{
-        parts: ["@stat"],
-        data: {
-          stat: this[stat]
-        },
-        options: {}
-      }],
-      event
-    }, {
-      options: {
-        window: {
-          title: game.i18n.format("KNW.Warfare.Statistics.Test", {
-            stat: game.i18n.localize(`KNW.Warfare.Statistics.${stat}.long`),
-            actorName: this.parent.name
-          })
-        }
-      }
-    },
-    {
-      data: {
-        speaker: {actor: this.parent},
-        flavor: game.i18n.format("KNW.Warfare.Statistics.Test", {
-          stat: game.i18n.localize(`KNW.Warfare.Statistics.${stat}.long`),
-          actorName: this.commander?.name ?? ""
-        })
-      }
-    });
-  }
-}
+// WarfareData is defined inside Hooks.once("init") so that dnd5e's SystemDataModel
+// is available as the base class, ensuring compatibility with dnd5e's ready-hook
+// actor iteration (which accesses dnd5e-specific properties like _redirectKeys).
 
 class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
 
@@ -594,6 +380,139 @@ const typeWarfare = "knw-army.warfare";
 
 Hooks.once("init", () => {
   foundry.utils.mergeObject(CONFIG, KNWCONFIG);
+
+  // Walk up from dnd5e's character model to the class that directly extends
+  // TypeDataModel — that is dnd5e's SystemDataModel. Extending from it ensures
+  // our data model has the properties dnd5e's ready hook expects (_redirectKeys etc.).
+  const _findDnD5eSystemDataModel = () => {
+    let cls = CONFIG.Actor.dataModels.character;
+    while (cls) {
+      const parent = Object.getPrototypeOf(cls);
+      if (parent === foundry.abstract.TypeDataModel) return cls;
+      cls = parent;
+    }
+    return foundry.abstract.TypeDataModel;
+  };
+
+  class WarfareData extends _findDnD5eSystemDataModel() {
+    /** @override */
+    static defineSchema() {
+      const fields = foundry.data.fields;
+      return {
+        commander: new fields.ForeignDocumentField(getDocumentClass("Actor"), {
+          textSearch: true, label: "KNW.Warfare.Commander.Label"
+        }),
+        battles: new fields.NumberField({
+          initial: 0, nullable: false, integer: true, label: "survived"
+        }),
+        ancestry: new fields.StringField({
+          choices: CONFIG.KNW.CHOICES.ANCESTRY,
+          initial: "human", textSearch: true, label: "KNW.Warfare.Ancestry"
+        }),
+        experience: new fields.StringField({
+          choices: CONFIG.KNW.CHOICES.EXPERIENCE,
+          initial: "regular", textSearch: true, label: "KNW.Warfare.Experience.Label"
+        }),
+        gear: new fields.StringField({
+          choices: CONFIG.KNW.CHOICES.GEAR,
+          initial: "light", textSearch: true, label: "KNW.Warfare.Gear.Label"
+        }),
+        type: new fields.StringField({
+          choices: CONFIG.KNW.CHOICES.TYPE,
+          initial: "infantry", textSearch: true, label: "KNW.Warfare.Type.Label"
+        }),
+        atk: new fields.NumberField({
+          required: true, initial: 0, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.atk.long"
+        }),
+        def: new fields.NumberField({
+          required: true, initial: 10, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.def.long"
+        }),
+        pow: new fields.NumberField({
+          required: true, initial: 0, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.pow.long"
+        }),
+        tou: new fields.NumberField({
+          required: true, initial: 10, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.tou.long"
+        }),
+        mor: new fields.NumberField({
+          required: true, initial: 0, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.mor.long"
+        }),
+        com: new fields.NumberField({
+          required: true, initial: 0, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.com.long"
+        }),
+        attacks: new fields.NumberField({
+          required: true, initial: 1, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.attacks.long"
+        }),
+        dmg: new fields.NumberField({
+          required: true, initial: 1, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.dmg.long"
+        }),
+        mov: new fields.NumberField({
+          required: true, initial: 1, nullable: false, integer: true,
+          label: "KNW.Warfare.Statistics.move.long"
+        }),
+        tier: new fields.NumberField({
+          required: true, initial: 1, integer: true,
+          choices: CONFIG.KNW.CHOICES.TIER, label: "KNW.Warfare.Tier"
+        }),
+        attributes: new fields.SchemaField({
+          movement: new fields.SchemaField({
+            units: new fields.StringField({ initial: "ft" }),
+            walk: new fields.NumberField({ required: true, initial: 4, integer: true }),
+          }),
+          hp: new fields.SchemaField({
+            max: new fields.NumberField({ required: true, initial: 6, integer: true }),
+            value: new fields.NumberField({ required: true, initial: 6, integer: true })
+          }),
+        }),
+        config: new fields.BooleanField({
+          required: true, initial: true, label: "enable edit"
+        }),
+        diminished: new fields.BooleanField({
+          required: true, initial: false, label: "Hit hard"
+        })
+      };
+    }
+
+    get casualtyDie() {
+      return this.attributes.hp.value;
+    }
+
+    get commanderName() {
+      const commander = this.commander;
+      return commander ? commander.name : game.i18n.localize("KNW.Warfare.Commander.None");
+    }
+
+    async rollStat(stat, event) {
+      return CONFIG.Dice.D20Roll.build({
+        rolls: [{ parts: ["@stat"], data: { stat: this[stat] }, options: {} }],
+        event
+      }, {
+        options: {
+          window: {
+            title: game.i18n.format("KNW.Warfare.Statistics.Test", {
+              stat: game.i18n.localize(`KNW.Warfare.Statistics.${stat}.long`),
+              actorName: this.parent.name
+            })
+          }
+        }
+      }, {
+        data: {
+          speaker: { actor: this.parent },
+          flavor: game.i18n.format("KNW.Warfare.Statistics.Test", {
+            stat: game.i18n.localize(`KNW.Warfare.Statistics.${stat}.long`),
+            actorName: this.commander?.name ?? ""
+          })
+        }
+      });
+    }
+  }
 
   Object.assign(CONFIG.Actor.dataModels, {
     [typeWarfare]: WarfareData
