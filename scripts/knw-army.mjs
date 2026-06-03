@@ -382,7 +382,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     super._onRender(context, options);
     // Use ??= so the listener is only attached once per sheet instance.
     // condition/callback are functions evaluated lazily on each open.
-    this._commanderContextMenu ??= ContextMenu.create(this, this.element, ".armyUnit-commander", this.commanderMenu);
+    this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu);
   }
 
   static async #rollStat(event, target) {
