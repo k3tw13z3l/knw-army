@@ -372,8 +372,7 @@ class WarfareSheet extends ActorSheet {
    * @override
    */
   async _onDropActor(event, data) {
-    // Returns false if user does not have owners permissions of the unit
-    if (!(await super._onDropActor(event, data))) return false;
+    if (!this.actor.isOwner) return false;
 
     const dropActor = await fromUuid(data.uuid);
     if (dropActor.pack) {
@@ -502,23 +501,23 @@ const KNWCONFIG = {
       TYPE: {
         aerial: {
           label: "KNW.Warfare.Type.aerial",
-          img: "modules/knw-army/Images/type/aerial.png"
+          img: "modules/knw-army/images/type/aerial.png"
         },
         artillery: {
           label: "KNW.Warfare.Type.artillery",
-          img: "modules/knw-army/Images/type/artillery.png"
+          img: "modules/knw-army/images/type/artillery.png"
         },
         artillerySiege: {
           label: "KNW.Warfare.Type.artillery-siege",
-          img: "modules/knw-army/Images/type/siege.png"
+          img: "modules/knw-army/images/type/siege.png"
         },
         cavalry: {
           label: "KNW.Warfare.Type.cavalry",
-          img: "modules/knw-army/Images/type/cavalry.png"
+          img: "modules/knw-army/images/type/cavalry.png"
         },
         infantry: {
           label: "KNW.Warfare.Type.infantry",
-          img: "modules/knw-army/Images/type/infantry.png"
+          img: "modules/knw-army/images/type/infantry.png"
         }
       },
       ANCESTRY: {
