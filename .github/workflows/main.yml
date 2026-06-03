@@ -41,6 +41,9 @@ jobs:
             module.json \
             README.md \
             scripts/ \
+            fonts/ \
+            images/ \
+            assets/ \
             styles/ \
             templates/ \
             lang/
