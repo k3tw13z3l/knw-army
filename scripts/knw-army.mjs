@@ -381,16 +381,30 @@ const typeWarfare = "knw-army.warfare";
 Hooks.once("init", () => {
   foundry.utils.mergeObject(CONFIG, KNWCONFIG);
 
-  // Walk up from dnd5e's character model to the class that directly extends
-  // TypeDataModel — that is dnd5e's SystemDataModel. Extending from it ensures
-  // our data model has the properties dnd5e's ready hook expects (_redirectKeys etc.).
+  // Find dnd5e's SystemDataModel so WarfareData inherits the properties
+  // (e.g. _redirectKeys) that dnd5e's ready-hook expects on every actor system.
   const _findDnD5eSystemDataModel = () => {
-    let cls = CONFIG.Actor.dataModels.character;
-    while (cls) {
-      const parent = Object.getPrototypeOf(cls);
-      if (parent === foundry.abstract.TypeDataModel) return cls;
-      cls = parent;
+    // 1. Direct namespace — dnd5e v5 exposes a global
+    if (globalThis.dnd5e?.dataModels?.SystemDataModel)
+      return globalThis.dnd5e.dataModels.SystemDataModel;
+
+    // 2. Walk up every registered actor data model until we find the class
+    //    whose parent IS TypeDataModel — that class is SystemDataModel.
+    const allModels = [
+      ...Object.values(CONFIG.Actor.dataModels ?? {}),
+      ...Object.values(CONFIG.Actor.systemDataModels ?? {})
+    ];
+    for (const cls of allModels) {
+      let cur = cls;
+      while (cur && cur !== foundry.abstract.TypeDataModel) {
+        const parent = Object.getPrototypeOf(cur);
+        if (parent === foundry.abstract.TypeDataModel) return cur;
+        if (!parent || parent === Object.prototype) break;
+        cur = parent;
+      }
     }
+
+    console.warn("knw-army | Could not locate dnd5e SystemDataModel; falling back to TypeDataModel");
     return foundry.abstract.TypeDataModel;
   };
 
