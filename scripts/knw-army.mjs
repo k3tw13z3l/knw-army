@@ -1,6 +1,12 @@
-// WarfareData is defined inside Hooks.once("init") so that dnd5e's SystemDataModel
-// is available as the base class, ensuring compatibility with dnd5e's ready-hook
-// actor iteration (which accesses dnd5e-specific properties like _redirectKeys).
+// Stub for dnd5e properties that don't exist on non-dnd5e actor types.
+// dnd5e's ready hook calls actor.sourcedItems._redirectKeys() on every actor;
+// we stamp this stub onto warfare instances in prepareData so it never throws.
+const WARFARE_STUB = Object.freeze({
+  _redirectKeys() {},
+  get() { return null; },
+  has() { return false; },
+  forEach() {},
+});
 
 class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
 
@@ -381,36 +387,22 @@ const typeWarfare = "knw-army.warfare";
 Hooks.once("init", () => {
   foundry.utils.mergeObject(CONFIG, KNWCONFIG);
 
-  // Find dnd5e's SystemDataModel so WarfareData inherits the properties
-  // (e.g. _redirectKeys) that dnd5e's ready-hook expects on every actor system.
-  const _findDnD5eSystemDataModel = () => {
-    // 1. Direct namespace — dnd5e 5.1+ moved it under abstract
-    if (globalThis.dnd5e?.dataModels?.abstract?.SystemDataModel)
-      return globalThis.dnd5e.dataModels.abstract.SystemDataModel;
-    if (globalThis.dnd5e?.dataModels?.SystemDataModel)
-      return globalThis.dnd5e.dataModels.SystemDataModel;
-
-    // 2. Walk up every registered actor data model until we find the class
-    //    whose parent IS TypeDataModel — that class is SystemDataModel.
-    const allModels = [
-      ...Object.values(CONFIG.Actor.dataModels ?? {}),
-      ...Object.values(CONFIG.Actor.systemDataModels ?? {})
-    ];
-    for (const cls of allModels) {
-      let cur = cls;
-      while (cur && cur !== foundry.abstract.TypeDataModel) {
-        const parent = Object.getPrototypeOf(cur);
-        if (parent === foundry.abstract.TypeDataModel) return cur;
-        if (!parent || parent === Object.prototype) break;
-        cur = parent;
+  // Stamp WARFARE_STUB onto sourcedItems for every warfare actor so that
+  // dnd5e's ready hook (which calls actor.sourcedItems._redirectKeys()) never throws.
+  const _origPrepareData = Actor.prototype.prepareData;
+  Actor.prototype.prepareData = function () {
+    _origPrepareData.call(this);
+    if (this.type === typeWarfare) {
+      const desc = Object.getOwnPropertyDescriptor(this, "sourcedItems");
+      if (!desc || desc.configurable) {
+        Object.defineProperty(this, "sourcedItems", {
+          value: WARFARE_STUB, configurable: true, writable: true, enumerable: false
+        });
       }
     }
-
-    console.warn("knw-army | Could not locate dnd5e SystemDataModel; falling back to TypeDataModel");
-    return foundry.abstract.TypeDataModel;
   };
 
-  class WarfareData extends _findDnD5eSystemDataModel() {
+  class WarfareData extends foundry.abstract.TypeDataModel {
     /** @override */
     static defineSchema() {
       const fields = foundry.data.fields;
