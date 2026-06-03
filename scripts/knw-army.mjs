@@ -294,10 +294,10 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
 
     const [compendiumEnriched, itemEnriched] = await Promise.all([
       Promise.all(foundTraits.map(ft =>
-        TextEditor.enrichHTML(ft.system?.description?.value ?? "", { async: true, links: true, rolls: true })
+        foundry.applications.ux.TextEditor.implementation.enrichHTML(ft.system?.description?.value ?? "", { async: true, links: true, rolls: true })
       )),
       Promise.all(itemTraits.map(it =>
-        TextEditor.enrichHTML(it.system?.description?.value ?? "", { async: true, links: true, rolls: true })
+        foundry.applications.ux.TextEditor.implementation.enrichHTML(it.system?.description?.value ?? "", { async: true, links: true, rolls: true })
       ))
     ]);
 
@@ -382,7 +382,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     super._onRender(context, options);
     // Use ??= so the listener is only attached once per sheet instance.
     // condition/callback are functions evaluated lazily on each open.
-    this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu);
+    this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu, { jQuery: false });
   }
 
   static async #rollStat(event, target) {
