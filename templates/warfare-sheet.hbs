@@ -44,11 +44,11 @@
       <input class='max' type=number name='system.attributes.hp.max' value='{{system.attributes.hp.max}}' min='4' max='12' step='2'>
       {{else}}
       <input class='{{#if system.diminished }}diminished {{/if}}hitpoints' type=number name='system.attributes.hp.value' value='{{system.attributes.hp.value}}' min='0' max='{{system.attributes.hp.max}}'>
-      <img src='modules/knw-army/Images/dice/d{{system.attributes.hp.max}}.svg' >
+      <img src='modules/knw-army/images/dice/d{{system.attributes.hp.max}}.svg' >
       {{/if}}
     </div>
     <div class="armyUnit-tokens">
-      <img src="/modules/knw-army/Images/ancestry/{{system.ancestry}}.png" class="armyUnitsheetimg armyUnit-token" width="50%" data-tooltip='{{system.ancestry}}'><img src="{{typeImage}}" class="armyUnitsheetimg  armyUnit-token" width="50%" data-tooltip='{{system.type}}'>
+      <img src="/modules/knw-army/images/ancestry/{{system.ancestry}}.png" class="armyUnitsheetimg armyUnit-token" width="50%" data-tooltip='{{system.ancestry}}'><img src="{{typeImage}}" class="armyUnitsheetimg  armyUnit-token" width="50%" data-tooltip='{{system.type}}'>
     </div>
     <div class="armyUnit-traitbox">
   {{#if system.config}}
@@ -133,7 +133,7 @@
       </div>
       <div class="armyUnit-statspacer">
         <div class="armyUnit-attack">
-          <img class="armyUnitsheetimg" src="/modules/knw-army/Images/attack-sword.png">
+          <img class="armyUnitsheetimg" src="/modules/knw-army/images/attack-sword.png">
           {{#if system.config }}
           <input type='text' name='system.attacks' value='{{ system.attacks }}' data-dtype='Number' />
           {{else}}
@@ -165,7 +165,7 @@
           </div>
         </div>
         <div class="armyUnit-mov">
-          <img class="armyUnitsheetimg" src="/modules/knw-army/Images/movement-arrow.png">
+          <img class="armyUnitsheetimg" src="/modules/knw-army/images/movement-arrow.png">
           {{#if system.config }}
           <div class="armyUnit-mov-combat"><i class="fas fa-swords"></i><input type='text' name='system.mov' value='{{ system.mov }}' data-dtype='Number' /></div>
           <div class="armyUnit-mov-land"><i class="fas fa-person-hiking"></i><input type='text' name='system.attributes.movement.walk' value='{{ system.attributes.movement.walk }}' data-dtype='Number' /></div>
