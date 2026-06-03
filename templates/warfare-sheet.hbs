@@ -14,7 +14,6 @@
       <span>{{actor.name}}</span>
       {{/if}}
     </div>
-    {{log actor}}
     <div class="armyUnit-text">
       {{#if system.config}}
       <select name='system.experience'>
@@ -56,8 +55,8 @@
       <span class="armyUnit-addTraits">
         Drag and Drop a trait...<a class="armyUnit-addTrait"></a>
       </span>
-    {{#if system.traits.length}}
-      {{#each system.traits as |trait|}}
+    {{#if traits.length}}
+      {{#each traits as |trait|}}
       <div class="onetraitbox" data-item-id="{{trait.id}}">
         <span class="traitname">{{trait.name}}
         {{#if trait.item}}
@@ -71,8 +70,8 @@
       {{/each}}
     {{/if}}
   {{else}}
-    {{#if system.traits.length}}
-      {{#each system.traits as |trait|}}
+    {{#if traits.length}}
+      {{#each traits as |trait|}}
       <div class="onetraitbox" data-item-id="{{trait.id}}">
         <span class="traitname">{{trait.name}}
         </span>

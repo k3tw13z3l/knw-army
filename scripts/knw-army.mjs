@@ -217,6 +217,13 @@ class WarfareData extends foundry.abstract.TypeDataModel {
 }
 
 class WarfareSheet extends ActorSheet {
+
+  constructor(...args) {
+    super(...args);
+    /** @type {Set<string>} Tracks which trait IDs are expanded in this sheet instance */
+    this._expandedTraits = new Set();
+  }
+
   /** @override */
   get template() {
     return "modules/knw-army/templates/warfare-sheet.hbs";
@@ -267,59 +274,52 @@ class WarfareSheet extends ActorSheet {
           rollable: this.isEditable ? "rollable" : ""
         }
       },
-      diminished: this.dimCheck,
       choices: CONFIG.KNW.CHOICES,
       lvTier: this._tier,
       typeImage: this.typeImage
     };
 
-    //debugger;    
-
     const system = this.actor.system;
-    if (system.traits === undefined) system.traits = [];
-    const aTrait = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry].trait
-    const compendiumTraits = game.packs.get('knw-army.traits').index.filter((item) => (aTrait.includes(item.name)));
-    const itemTraits = this.actor.items.filter((item) => (item.type='feat'));
 
-   // ancestral traits
+    // Use optional chaining: if ancestry is somehow unknown, fall back to empty trait list
+    const aTrait = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.trait ?? [];
+    const compendiumTraits = game.packs.get('knw-army.traits').index.filter(item => aTrait.includes(item.name));
+    // Fix: was `item.type='feat'` (assignment) — must be strict equality
+    const itemTraits = this.actor.items.filter(item => item.type === 'feat');
 
-    for (const cTrait of compendiumTraits){
-      const foundTrait = await fromUuid(cTrait.uuid);
-      const check = system.traits.find((trait)=> trait.id === foundTrait._id);
-      if (!check) {
-        system.traits.push({
-          id: foundTrait._id,
-          name: foundTrait.name,
-          expanded: false,
-          item: false,
-          description: {
-            enriched: await TextEditor.enrichHTML(foundTrait.system?.description?.value,{
-              async: true,
-              links: true,
-              rolls: true
-            })
-          }
-        })
-      }
-    };
-    for (const iTrait of itemTraits) {
-      const check = system.traits.find((trait)=> trait.id === iTrait._id);
-      if (!check) {
-        system.traits.push({
-          id: iTrait._id,
-          name: iTrait.name,
-          expanded: false,
-          item: true,
-          description: {
-            enriched: await TextEditor.enrichHTML(iTrait.system?.description?.value,{
-              async: true,
-              links: true,
-              rolls: true
-            })
-          }
-        })
-      }
-    };
+    // Resolve all compendium UUIDs in parallel, then enrich all descriptions in parallel
+    const foundTraits = await Promise.all(compendiumTraits.map(ct => fromUuid(ct.uuid)));
+
+    const [compendiumEnriched, itemEnriched] = await Promise.all([
+      Promise.all(foundTraits.map(ft =>
+        TextEditor.enrichHTML(ft.system?.description?.value ?? "", { async: true, links: true, rolls: true })
+      )),
+      Promise.all(itemTraits.map(it =>
+        TextEditor.enrichHTML(it.system?.description?.value ?? "", { async: true, links: true, rolls: true })
+      ))
+    ]);
+
+    // Rebuild the trait list from scratch on every render so that ancestry changes
+    // are immediately reflected. Expand/collapse state is kept on the sheet instance.
+    context.traits = [
+      ...foundTraits.map((ft, i) => ({
+        id: ft.id,
+        name: ft.name,
+        expanded: this._expandedTraits.has(ft.id),
+        item: false,
+        description: { enriched: compendiumEnriched[i] }
+      })),
+      ...itemTraits.map((it, i) => ({
+        id: it.id,
+        name: it.name,
+        expanded: this._expandedTraits.has(it.id),
+        item: true,
+        description: { enriched: itemEnriched[i] }
+      }))
+    ];
+
+    // Fire-and-forget: only writes when the stored value needs to change
+    this._autoUpdateDiminished();
     return context;
   }
 
@@ -333,14 +333,34 @@ class WarfareSheet extends ActorSheet {
     else return CONFIG.KNW.CHOICES.TYPE[system.type].img;
   } // typeImage
 
+  /**
+   * Returns true when HP is at or below half maximum. Pure — no side effects.
+   * The template reads system.diminished directly; this getter is used by
+   * _autoUpdateDiminished() to decide whether a write is needed.
+   * @returns {boolean}
+   */
   get dimCheck() {
-     const system = this.actor.system;
-     if ( (system.attributes.hp.value <= ( system.attributes.hp.max / 2 ))) { 
-       if ( system.diminished || !CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry].diminishable ) return;
-       ui.notifications.warn("Succeed on a morale check DC13 or gain 1 Dam");
-       return this.actor.update({"system.diminished" : true});
-     } else return this.actor.update({"system.diminished": false});
-  } // dimcheck
+    const { hp } = this.actor.system.attributes;
+    return hp.value <= hp.max / 2;
+  }
+
+  /**
+   * Writes system.diminished only when its stored value differs from what it
+   * should be. Safe to call from getData() because the guard prevents the
+   * write → re-render → write cycle that a naive update-always approach causes.
+   */
+  _autoUpdateDiminished() {
+    const system = this.actor.system;
+    const shouldBeDiminished = this.dimCheck;
+    const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.diminishable ?? false;
+
+    if (shouldBeDiminished && !system.diminished && isDiminishable) {
+      ui.notifications.warn("Succeed on a morale check DC13 or gain 1 Dam");
+      this.actor.update({"system.diminished": true});
+    } else if (!shouldBeDiminished && system.diminished) {
+      this.actor.update({"system.diminished": false});
+    }
+  }
 
   get _tier() {
     const system = this.actor.system;
@@ -353,7 +373,7 @@ class WarfareSheet extends ActorSheet {
    */
   async _onDropActor(event, data) {
     // Returns false if user does not have owners permissions of the unit
-    if (!super._onDropActor(event, data)) return false;
+    if (!(await super._onDropActor(event, data))) return false;
 
     const dropActor = await fromUuid(data.uuid);
     if (dropActor.pack) {
@@ -405,7 +425,7 @@ class WarfareSheet extends ActorSheet {
    */
   async #rollStat(event) {
     const stat = event.currentTarget.dataset.target;
-    this.actor.system.rollStat(stat, event);
+    await this.actor.system.rollStat(stat, event);
   }
 
   async _toggleConfig(event) {
@@ -415,9 +435,10 @@ class WarfareSheet extends ActorSheet {
 
   async _toggleExpandState(event) {
     const toggleId = $(event.currentTarget).closest(".onetraitbox").data("itemId");
-    const fTrait = this.actor.system.traits.find((trait) => trait.id === toggleId);
-    const state = fTrait.expanded;
-    fTrait.expanded = !state;
+    // Track expanded state on the sheet instance rather than mutating actor data.
+    // getData() reads this._expandedTraits when rebuilding the trait list.
+    if (this._expandedTraits.has(toggleId)) this._expandedTraits.delete(toggleId);
+    else this._expandedTraits.add(toggleId);
     this.render();
   }
 
@@ -452,7 +473,7 @@ class WarfareSheet extends ActorSheet {
         warfareUnit: this.actor.name
       })
     );
-    this.actor.update({"system.commander": ""});
+    await this.actor.update({"system.commander": null});
   }
 
 }
@@ -687,7 +708,6 @@ Hooks.once("init", () => {
 
 Hooks.on("ready", () => {
   const actorTypes = Object.keys(game.model.Actor).filter(t => !t.startsWith("knw-army"));
-  const debug = CONFIG.statusEffects;
   for (const status of CONFIG.statusEffects) {
     if ("hud" in status) continue;
     status.hud = {actorTypes};
