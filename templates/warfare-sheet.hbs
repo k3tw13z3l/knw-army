@@ -1,4 +1,4 @@
-<form class="{{cssClass}} flexcol" autocomplete="off">
+<form class="dnd5e sheet actor warfare flexcol" autocomplete="off">
   <div class="armyUnit">
     <div class="armyUnit-art">
     {{#if system.config}}
@@ -57,10 +57,10 @@
       </span>
     {{#if traits.length}}
       {{#each traits as |trait|}}
-      <div class="onetraitbox" data-item-id="{{trait.id}}">
+      <div class="onetraitbox" data-item-id="{{trait.id}}" data-action="toggleTrait">
         <span class="traitname">{{trait.name}}
         {{#if trait.item}}
-          &nbsp;<a class="armyUnit-delTrait"><i class="fas fa-trash"></i></a>
+          &nbsp;<a class="armyUnit-delTrait" data-action="deleteTrait"><i class="fas fa-trash"></i></a>
         {{/if}}
         </span>
         <div class="trait-description {{#if trait.expanded}}expanded{{/if}}">
@@ -72,7 +72,7 @@
   {{else}}
     {{#if traits.length}}
       {{#each traits as |trait|}}
-      <div class="onetraitbox" data-item-id="{{trait.id}}">
+      <div class="onetraitbox" data-item-id="{{trait.id}}" data-action="toggleTrait">
         <span class="traitname">{{trait.name}}
         </span>
         <div class="trait-description {{#if trait.expanded}}expanded{{/if}}">
@@ -94,7 +94,7 @@
       <span>{{system.commanderName}}</span>
     </div>
     <div class="armyUnit-stats">
-      <div class="armyUnit-lock">
+      <div class="armyUnit-lock" data-action="toggleConfig">
         {{#if system.config}}
         <a class="kw-warfare-unit-config"><i class="fas fa-unlock"></i></a>
         {{else}}
@@ -107,7 +107,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.atk.value }}</div>
         {{/if}}
-        <div class='armyUnit-statname rollable' data-target='atk'>
+        <div class='armyUnit-statname rollable' data-target='atk' data-action='rollStat'>
           <a data-tooltip="Attack">{{ coreStats.atk.label }}</a>
         </div>
       </div>
@@ -117,7 +117,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.pow.value }}</div>
         {{/if}}
-        <div class='armyUnit-statname rollable' data-target='pow'>
+        <div class='armyUnit-statname rollable' data-target='pow' data-action='rollStat'>
           <a data-tooltip="Power">{{ coreStats.pow.label }}</a>
         </div>
       </div>
@@ -127,7 +127,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.com.value }}</div>
         {{/if}}
-        <div class='armyUnit-statname rollable' data-target='com'>
+        <div class='armyUnit-statname rollable' data-target='com' data-action='rollStat'>
           <a data-tooltip="Command">{{ coreStats.com.label }}</a>
         </div>
       </div>
@@ -197,7 +197,7 @@
         {{else}}
         <div class='armyUnit-statbonus'>{{ coreStats.mor.value }}</div>
         {{/if}}
-        <div class='armyUnit-statname rollable' data-target='mor'>
+        <div class='armyUnit-statname rollable' data-target='mor' data-action='rollStat'>
           <a data-tooltip="Morale">{{ coreStats.mor.label }}</a>
         </div>
       </div>

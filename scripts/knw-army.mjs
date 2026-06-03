@@ -216,78 +216,80 @@ class WarfareData extends foundry.abstract.TypeDataModel {
   }
 }
 
-class WarfareSheet extends ActorSheet {
+class WarfareSheet extends foundry.applications.sheets.ActorSheetV2 {
 
-  constructor(...args) {
-    super(...args);
+  constructor(options = {}) {
+    super(options);
     /** @type {Set<string>} Tracks which trait IDs are expanded in this sheet instance */
     this._expandedTraits = new Set();
   }
 
-  /** @override */
-  get template() {
-    return "modules/knw-army/templates/warfare-sheet.hbs";
-  }
+  static DEFAULT_OPTIONS = {
+    classes: ["dnd5e", "sheet", "actor", "warfare"],
+    position: { width: 748, height: 641 },
+    form: { submitOnChange: true },
+    dragDrop: [{ dropSelector: "form" }],
+    actions: {
+      rollStat: WarfareSheet.#rollStat,
+      toggleConfig: WarfareSheet.#toggleConfig,
+      toggleTrait: WarfareSheet.#toggleExpandState,
+      deleteTrait: WarfareSheet.#deleteItem,
+    }
+  };
+
+  static PARTS = {
+    form: {
+      template: "modules/knw-army/templates/warfare-sheet.hbs"
+    }
+  };
 
   /** @override */
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "sheet", "actor", "warfare"],
-      width: 748,
-      height: 641
-    });
-  }
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+    const system = this.actor.system;
 
-  /** @override */
-  async getData(options) {
-    const context = {
-      ...super.getData(options),
+    Object.assign(context, {
       actor: this.actor,
-      system: this.actor.system,
+      system,
       coreStats: {
         atk: {
           label: game.i18n.localize("KNW.Warfare.Statistics.atk.abbr"),
-          value: this.actor.system.atk.signedString(),
+          value: system.atk.signedString(),
           rollable: this.isEditable ? "rollable" : ""
         },
         def: {
           label: game.i18n.localize("KNW.Warfare.Statistics.def.abbr"),
-          value: this.actor.system.def
+          value: system.def
         },
         pow: {
           label: game.i18n.localize("KNW.Warfare.Statistics.pow.abbr"),
-          value: this.actor.system.pow.signedString(),
+          value: system.pow.signedString(),
           rollable: this.isEditable ? "rollable" : ""
         },
         tou: {
           label: game.i18n.localize("KNW.Warfare.Statistics.tou.abbr"),
-          value: this.actor.system.tou
+          value: system.tou
         },
         mor: {
           label: game.i18n.localize("KNW.Warfare.Statistics.mor.abbr"),
-          value: this.actor.system.mor.signedString(),
+          value: system.mor.signedString(),
           rollable: this.isEditable ? "rollable" : ""
         },
         com: {
           label: game.i18n.localize("KNW.Warfare.Statistics.com.abbr"),
-          value: this.actor.system.com.signedString(),
+          value: system.com.signedString(),
           rollable: this.isEditable ? "rollable" : ""
         }
       },
       choices: CONFIG.KNW.CHOICES,
       lvTier: this._tier,
       typeImage: this.typeImage
-    };
+    });
 
-    const system = this.actor.system;
-
-    // Use optional chaining: if ancestry is somehow unknown, fall back to empty trait list
     const aTrait = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.trait ?? [];
     const compendiumTraits = game.packs.get('knw-army.traits').index.filter(item => aTrait.includes(item.name));
-    // Fix: was `item.type='feat'` (assignment) — must be strict equality
     const itemTraits = this.actor.items.filter(item => item.type === 'feat');
 
-    // Resolve all compendium UUIDs in parallel, then enrich all descriptions in parallel
     const foundTraits = await Promise.all(compendiumTraits.map(ct => fromUuid(ct.uuid)));
 
     const [compendiumEnriched, itemEnriched] = await Promise.all([
@@ -299,8 +301,6 @@ class WarfareSheet extends ActorSheet {
       ))
     ]);
 
-    // Rebuild the trait list from scratch on every render so that ancestry changes
-    // are immediately reflected. Expand/collapse state is kept on the sheet instance.
     context.traits = [
       ...foundTraits.map((ft, i) => ({
         id: ft.id,
@@ -318,20 +318,16 @@ class WarfareSheet extends ActorSheet {
       }))
     ];
 
-    // Fire-and-forget: only writes when the stored value needs to change
     this._autoUpdateDiminished();
     return context;
   }
 
-  /**
-   * @returns {string} The image path
-   */
   get typeImage() {
     const system = this.actor.system;
     if ((system.type === "infantry") && (system.experience === "levy"))
       return "modules/knw-army/assets/icons/levy.png";
     else return CONFIG.KNW.CHOICES.TYPE[system.type].img;
-  } // typeImage
+  }
 
   /**
    * Returns true when HP is at or below half maximum. Pure — no side effects.
@@ -346,7 +342,7 @@ class WarfareSheet extends ActorSheet {
 
   /**
    * Writes system.diminished only when its stored value differs from what it
-   * should be. Safe to call from getData() because the guard prevents the
+   * should be. Safe to call from _prepareContext() because the guard prevents the
    * write → re-render → write cycle that a naive update-always approach causes.
    */
   _autoUpdateDiminished() {
@@ -363,102 +359,65 @@ class WarfareSheet extends ActorSheet {
   }
 
   get _tier() {
-    const system = this.actor.system;
-    return CONFIG.KNW.CHOICES.TIER[system.tier];
-  } // tier
+    return CONFIG.KNW.CHOICES.TIER[this.actor.system.tier];
+  }
 
-  /**
-   * @returns {Promise<Actor | false>} This sheet's actor
-   * @override
-   */
+  /** @override */
   async _onDropActor(event, data) {
     if (!this.actor.isOwner) return false;
 
     const dropActor = await fromUuid(data.uuid);
     if (dropActor.pack) {
-      ui.notifications.warn("KNW.Warfare.Commander.Warning.Pack", {
-        localize: true
-      });
+      ui.notifications.warn("KNW.Warfare.Commander.Warning.Pack", { localize: true });
       return false;
-    } else if (
-      !foundry.utils.hasProperty(dropActor, "system.attributes.prof")
-    ) {
-      ui.notifications.warn("KNW.Warfare.Commander.Warning.NoProf", {
-        localize: true
-      });
+    } else if (!foundry.utils.hasProperty(dropActor, "system.attributes.prof")) {
+      ui.notifications.warn("KNW.Warfare.Commander.Warning.NoProf", { localize: true });
       return false;
     }
     return this.actor.update({"system.commander": dropActor.id});
   }
 
   /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
-    html.on(
-      "click",
-      ".armyUnit-statname.rollable",
-      this.#rollStat.bind(this)
-    );
-    html.on(
-      "click",
-      ".onetraitbox",
-      this._toggleExpandState.bind(this)
-    );
-    html.on(
-      "click",
-      ".armyUnit-lock",
-      this._toggleConfig.bind(this)
-    );
-    html.on(
-      "click",
-      ".armyUnit-delTrait",
-      this._deleteItem.bind(this)
-    );
-
-    ContextMenu.create(this, html[0], ".armyUnit-commander", this.commanderMenu);
+  _onRender(context, options) {
+    super._onRender(context, options);
+    // Use ??= so the listener is only attached once per sheet instance.
+    // condition/callback are functions evaluated lazily on each open.
+    this._commanderContextMenu ??= ContextMenu.create(this, this.element, ".armyUnit-commander", this.commanderMenu);
   }
 
-  /**
-   * Roll a Warfare skill
-   * @param {PointerEvent} event
-   */
-  async #rollStat(event) {
-    const stat = event.currentTarget.dataset.target;
-    await this.actor.system.rollStat(stat, event);
+  static async #rollStat(event, target) {
+    await this.actor.system.rollStat(target.dataset.target, event);
   }
 
-  async _toggleConfig(event) {
-      const state = this.actor.system.config;
-      this.actor.update({"system.config": !state});
+  static async #toggleConfig(event, target) {
+    await this.actor.update({"system.config": !this.actor.system.config});
   }
 
-  async _toggleExpandState(event) {
-    const toggleId = $(event.currentTarget).closest(".onetraitbox").data("itemId");
-    // Track expanded state on the sheet instance rather than mutating actor data.
-    // getData() reads this._expandedTraits when rebuilding the trait list.
-    if (this._expandedTraits.has(toggleId)) this._expandedTraits.delete(toggleId);
-    else this._expandedTraits.add(toggleId);
-    this.render();
+  static async #toggleExpandState(event, target) {
+    const itemId = target.closest(".onetraitbox").dataset.itemId;
+    if (this._expandedTraits.has(itemId)) this._expandedTraits.delete(itemId);
+    else this._expandedTraits.add(itemId);
+    this.render({ force: true });
   }
 
-  async _deleteItem(event) {
-    const itemId = $(event.currentTarget).closest(".onetraitbox").data("itemId");
+  static async #deleteItem(event, target) {
+    event.stopPropagation();
+    const itemId = target.closest(".onetraitbox").dataset.itemId;
     await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
-  } 
+  }
 
   get commanderMenu() {
-    const commander = this.actor.system.commander;
     return [
       {
         name: game.i18n.localize("KNW.Warfare.Commander.View"),
         icon: "<i class='fas fa-eye'></i>",
-        condition: commander,
-        callback: () => commander.sheet.render(true)
+        condition: () => !!this.actor.system.commander,
+        callback: () => this.actor.system.commander?.sheet.render({ force: true })
       },
       {
         name: game.i18n.localize("KNW.Warfare.Commander.Clear"),
         icon: "<i class='fas fa-trash'></i>",
-        condition: this.isEditable && commander,
+        condition: () => this.isEditable && !!this.actor.system.commander,
         callback: this.clearCommander.bind(this)
       }
     ];
