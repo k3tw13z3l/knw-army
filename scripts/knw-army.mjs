@@ -384,7 +384,9 @@ Hooks.once("init", () => {
   // Find dnd5e's SystemDataModel so WarfareData inherits the properties
   // (e.g. _redirectKeys) that dnd5e's ready-hook expects on every actor system.
   const _findDnD5eSystemDataModel = () => {
-    // 1. Direct namespace — dnd5e v5 exposes a global
+    // 1. Direct namespace — dnd5e 5.1+ moved it under abstract
+    if (globalThis.dnd5e?.dataModels?.abstract?.SystemDataModel)
+      return globalThis.dnd5e.dataModels.abstract.SystemDataModel;
     if (globalThis.dnd5e?.dataModels?.SystemDataModel)
       return globalThis.dnd5e.dataModels.SystemDataModel;
 
@@ -532,7 +534,7 @@ Hooks.once("init", () => {
     [typeWarfare]: WarfareData
   });
 
-  Actors.registerSheet(moduleID, WarfareSheet, {
+  foundry.documents.collections.Actors.registerSheet(moduleID, WarfareSheet, {
     types: [typeWarfare],
     makeDefault: true,
     label: "KNW.Sheets.Warfare"
