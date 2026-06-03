@@ -216,7 +216,7 @@ class WarfareData extends foundry.abstract.TypeDataModel {
   }
 }
 
-class WarfareSheet extends foundry.applications.sheets.ActorSheetV2 {
+class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
 
   constructor(options = {}) {
     super(options);
