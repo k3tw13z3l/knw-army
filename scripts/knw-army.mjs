@@ -93,6 +93,14 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
       ))
     ]);
 
+    context.selectedLabels = {
+      experience: game.i18n.localize(CONFIG.KNW.CHOICES.EXPERIENCE[system.experience] ?? system.experience),
+      gear: game.i18n.localize(CONFIG.KNW.CHOICES.GEAR[system.gear] ?? system.gear),
+      ancestry: CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.label ?? system.ancestry,
+      type: game.i18n.localize(CONFIG.KNW.CHOICES.TYPE[system.type]?.label ?? system.type),
+      tier: CONFIG.KNW.CHOICES.TIER[system.tier] ?? system.tier
+    };
+
     context.traits = [
       ...foundTraits.map((ft, i) => ({
         id: ft.id,
@@ -172,9 +180,12 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
   /** @override */
   _onRender(context, options) {
     super._onRender(context, options);
-    // Use ??= so the listener is only attached once per sheet instance.
-    // condition/callback are functions evaluated lazily on each open.
     this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu, { jQuery: false });
+    this._experienceMenu ??= new foundry.applications.ux.ContextMenu(this.element, "[data-field='experience']", this._choiceMenu("system.experience", CONFIG.KNW.CHOICES.EXPERIENCE, v => game.i18n.localize(v)), { jQuery: false });
+    this._gearMenu ??= new foundry.applications.ux.ContextMenu(this.element, "[data-field='gear']", this._choiceMenu("system.gear", CONFIG.KNW.CHOICES.GEAR, v => game.i18n.localize(v)), { jQuery: false });
+    this._ancestryMenu ??= new foundry.applications.ux.ContextMenu(this.element, "[data-field='ancestry']", this._choiceMenu("system.ancestry", CONFIG.KNW.CHOICES.ANCESTRY, v => v.label), { jQuery: false });
+    this._typeMenu ??= new foundry.applications.ux.ContextMenu(this.element, "[data-field='type']", this._choiceMenu("system.type", CONFIG.KNW.CHOICES.TYPE, v => game.i18n.localize(v.label)), { jQuery: false });
+    this._tierMenu ??= new foundry.applications.ux.ContextMenu(this.element, "[data-field='tier']", this._choiceMenu("system.tier", CONFIG.KNW.CHOICES.TIER, v => v), { jQuery: false });
   }
 
   static async #rollStat(event, target) {
@@ -213,6 +224,14 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
         callback: this.clearCommander.bind(this)
       }
     ];
+  }
+
+  _choiceMenu(field, choices, getLabel) {
+    return Object.entries(choices).map(([key, value]) => ({
+      name: getLabel(value),
+      icon: "",
+      callback: () => this.actor.update({ [field]: isNaN(key) ? key : Number(key) })
+    }));
   }
 
   async clearCommander() {

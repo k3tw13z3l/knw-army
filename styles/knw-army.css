@@ -106,12 +106,13 @@
   text-transform: capitalize;
   text-align: left;
 }
-.armyUnit-text select {
+.armyUnit-text span.armyUnit-select {
   color: #fff;
   font: 500 19px 'Roboto', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
-  height: auto;
   text-transform: capitalize;
+  cursor: context-menu;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
 }
 
 .armyUnit-text input {
@@ -445,15 +446,13 @@ input.armyUnit-statbonus[type="number"] {
   text-shadow: 1px 1px 2px rgba(0, 0, 0); 
 }
 
-.armyUnit-tier-text select {
+.armyUnit-tier-text span.armyUnit-select {
   position: relative;
   top: -27px;
   color: #000000;
-  /* text-align: center; */
   font: 500 28px 'Roboto Slab', sans-serif;
-  /* display: flex;
-  align-items: center;
-  justify-content: center */
+  cursor: context-menu;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
 }
 
 .armyUnit-mov {

@@ -16,18 +16,10 @@
     </div>
     <div class="armyUnit-text">
       {{#if system.config}}
-      <select name='system.experience'>
-        {{selectOptions choices.EXPERIENCE selected=system.experience localize=true}}
-      </select>&nbsp;
-      <select name='system.gear'>
-        {{selectOptions choices.GEAR selected=system.gear localize=true}}
-      </select><br>
-      <select name='system.ancestry'>
-        {{selectOptions choices.ANCESTRY selected=system.ancestry}}
-      </select>&nbsp;
-      <select name='system.type'>
-        {{selectOptions choices.TYPE selected=system.type localize=true}}
-      </select>
+      <span class="armyUnit-select" data-field="experience">{{selectedLabels.experience}}</span>&nbsp;
+      <span class="armyUnit-select" data-field="gear">{{selectedLabels.gear}}</span><br>
+      <span class="armyUnit-select" data-field="ancestry">{{selectedLabels.ancestry}}</span>&nbsp;
+      <span class="armyUnit-select" data-field="type">{{selectedLabels.type}}</span>
       {{else}}
       <span>{{system.experience}}</span>&nbsp;
       <span>{{system.gear}}</span><BR>
@@ -156,9 +148,7 @@
           <div class="armyUnit-tier-text">
             {{localize 'KNW.Warfare.Tier'}}
             {{#if system.config}}
-            <select name='system.tier'>
-            {{selectOptions choices.TIER selected=system.tier}}
-            </select>
+            <span class="armyUnit-select" data-field="tier">{{selectedLabels.tier}}</span>
             {{else}}
             <div>{{ lvTier }}</div>
             {{/if}}
