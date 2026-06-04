@@ -180,13 +180,10 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
   /** @override */
   _onRender(context, options) {
     super._onRender(context, options);
-    const id = this.element.id;
     this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu, { jQuery: false });
-    this._experienceMenu ??= new foundry.applications.ux.ContextMenu(document.body, `#${id} [data-field='experience']`, this._choiceMenu("system.experience", CONFIG.KNW.CHOICES.EXPERIENCE, v => game.i18n.localize(v)), { jQuery: false });
-    this._gearMenu ??= new foundry.applications.ux.ContextMenu(document.body, `#${id} [data-field='gear']`, this._choiceMenu("system.gear", CONFIG.KNW.CHOICES.GEAR, v => game.i18n.localize(v)), { jQuery: false });
-    this._ancestryMenu ??= new foundry.applications.ux.ContextMenu(document.body, `#${id} [data-field='ancestry']`, this._choiceMenu("system.ancestry", CONFIG.KNW.CHOICES.ANCESTRY, v => v.label), { jQuery: false });
-    this._typeMenu ??= new foundry.applications.ux.ContextMenu(document.body, `#${id} [data-field='type']`, this._choiceMenu("system.type", CONFIG.KNW.CHOICES.TYPE, v => game.i18n.localize(v.label)), { jQuery: false });
-    this._tierMenu ??= new foundry.applications.ux.ContextMenu(document.body, `#${id} [data-field='tier']`, this._choiceMenu("system.tier", CONFIG.KNW.CHOICES.TIER, v => v), { jQuery: false });
+    for (const span of this.element.querySelectorAll("span.armyUnit-select[data-field]")) {
+      span.addEventListener("contextmenu", (ev) => this._onFieldContextMenu(ev));
+    }
   }
 
   static async #rollStat(event, target) {
@@ -227,13 +224,56 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     ];
   }
 
-  _choiceMenu(field, choices, getLabel) {
-    return Object.entries(choices).map(([key, value]) => ({
-      name: getLabel(value),
-      icon: "",
-      condition: () => true,
-      callback: () => this.actor.update({ [field]: isNaN(key) ? key : Number(key) })
-    }));
+  _onFieldContextMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    document.querySelector("nav.knw-choice-menu")?.remove();
+
+    const field = event.currentTarget.dataset.field;
+    const entries = this._getChoiceEntries(field);
+    if (!entries?.length) return;
+
+    const nav = document.createElement("nav");
+    nav.classList.add("context-menu", "knw-choice-menu");
+    nav.style.cssText = "position:fixed; z-index:9999;";
+
+    const ol = document.createElement("ol");
+    for (const { key, label } of entries) {
+      const li = document.createElement("li");
+      li.classList.add("context-item");
+      li.innerHTML = `<span>${label}</span>`;
+      li.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nav.remove();
+        this.actor.update({ [`system.${field}`]: isNaN(key) ? key : Number(key) });
+      });
+      ol.appendChild(li);
+    }
+    nav.appendChild(ol);
+    document.body.appendChild(nav);
+
+    const { clientX, clientY } = event;
+    const top = (clientY + nav.offsetHeight > window.innerHeight) ? clientY - nav.offsetHeight : clientY;
+    const left = (clientX + nav.offsetWidth > window.innerWidth) ? clientX - nav.offsetWidth : clientX;
+    nav.style.top = `${top}px`;
+    nav.style.left = `${left}px`;
+
+    setTimeout(() => {
+      document.addEventListener("click", (e) => { if (!nav.contains(e.target)) nav.remove(); }, { once: true });
+    }, 0);
+  }
+
+  _getChoiceEntries(field) {
+    const defs = {
+      experience: [CONFIG.KNW.CHOICES.EXPERIENCE, v => game.i18n.localize(v)],
+      gear:       [CONFIG.KNW.CHOICES.GEAR,       v => game.i18n.localize(v)],
+      ancestry:   [CONFIG.KNW.CHOICES.ANCESTRY,   v => v.label],
+      type:       [CONFIG.KNW.CHOICES.TYPE,        v => game.i18n.localize(v.label)],
+      tier:       [CONFIG.KNW.CHOICES.TIER,        v => v],
+    }[field];
+    if (!defs) return null;
+    const [choices, getLabel] = defs;
+    return Object.entries(choices).map(([key, value]) => ({ key, label: getLabel(value) }));
   }
 
   async clearCommander() {
