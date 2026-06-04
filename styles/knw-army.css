@@ -490,3 +490,31 @@ input.armyUnit-statbonus[type="number"] {
   top: -55px;
 }
 
+nav.knw-choice-menu {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  min-width: 120px;
+  padding: 4px 0;
+}
+
+nav.knw-choice-menu ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.knw-choice-menu .context-item {
+  padding: 5px 12px;
+  cursor: pointer;
+  color: #f0e6d2;
+  font: 500 14px 'Roboto', sans-serif;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+nav.knw-choice-menu .context-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
