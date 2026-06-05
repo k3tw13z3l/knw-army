@@ -635,70 +635,33 @@ Hooks.once("init", () => {
     label: "KNW.Sheets.Warfare"
   });
 
-  CONFIG.statusEffects.push({
-    id: "broken",
-    name: "KNW.Warfare.Conditions.Broken",
-    img: "systems/dnd5e/icons/svg/statuses/incapacitated.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "disbanded",
-    name: "KNW.Warfare.Conditions.Disbanded",
-    img: "systems/dnd5e/icons/svg/statuses/dead.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "disorganized",
-    name: "KNW.Warfare.Conditions.Disorganized",
-    img: "systems/dnd5e/icons/svg/statuses/stunned.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "disoriented",
-    name: "KNW.Warfare.Conditions.Disoriented",
-    img: "modules/knw-army/assets/icons/disoriented.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "exposed",
-    name: "KNW.Warfare.Conditions.Exposed",
-    img: "modules/knw-army/assets/icons/exposed.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "hidden",
-    name: "KNW.Warfare.Conditions.Hidden",
-    img: "systems/dnd5e/icons/svg/statuses/hiding.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "misled",
-    name: "KNW.Warfare.Conditions.Misled",
-    img: "systems/dnd5e/icons/svg/statuses/surprised.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
-  }, {
-    id: "weakened",
-    name: "KNW.Warfare.Conditions.Weakened",
-    img: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
-    hud: {
-      actorTypes: [typeWarfare]
-    }
+  const warfareConditionRef = "Compendium.knw-army.warfare.JournalEntry.8777M6BFSUG1WO7A";
+  Object.assign(CONFIG.DND5E.conditionTypes, {
+    broken:       { name: "Broken",       img: "systems/dnd5e/icons/svg/statuses/incapacitated.svg", reference: warfareConditionRef },
+    disbanded:    { name: "Disbanded",    img: "systems/dnd5e/icons/svg/statuses/dead.svg",          reference: warfareConditionRef },
+    diminished:   { name: "Diminished",   img: "systems/dnd5e/icons/svg/statuses/wounded.svg",       reference: warfareConditionRef },
+    disorganized: { name: "Disorganized", img: "systems/dnd5e/icons/svg/statuses/stunned.svg",       reference: warfareConditionRef },
+    disoriented:  { name: "Disoriented",  img: "modules/knw-army/assets/icons/disoriented.svg",      reference: warfareConditionRef },
+    exposed:      { name: "Exposed",      img: "modules/knw-army/assets/icons/exposed.svg",          reference: warfareConditionRef },
+    hidden:       { name: "Hidden",       img: "systems/dnd5e/icons/svg/statuses/hiding.svg",        reference: warfareConditionRef },
+    misled:       { name: "Misled",       img: "systems/dnd5e/icons/svg/statuses/surprised.svg",     reference: warfareConditionRef },
+    weakened:     { name: "Weakened",     img: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",    reference: warfareConditionRef },
   });
 });
 
 Hooks.on("ready", () => {
-  const actorTypes = Object.keys(game.model.Actor).filter(t => !t.startsWith("knw-army"));
+  const warfareConditions = new Set([
+    "broken", "disbanded", "diminished", "disorganized", "disoriented",
+    "exposed", "hidden", "misled", "weakened"
+  ]);
+  const nonWarfareTypes = Object.keys(game.model.Actor).filter(t => !t.startsWith("knw-army"));
+
   for (const status of CONFIG.statusEffects) {
-    if ("hud" in status) continue;
-    status.hud = {actorTypes};
+    if (warfareConditions.has(status.id)) {
+      status.hud = { actorTypes: [typeWarfare] };
+    } else if (!("hud" in status)) {
+      status.hud = { actorTypes: nonWarfareTypes };
+    }
   }
 });
 
