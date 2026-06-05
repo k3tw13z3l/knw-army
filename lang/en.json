@@ -89,6 +89,7 @@
         "Broken": "Broken",
         "Disbanded": "Disbanded",
         "Diminished": "Diminished",
+        "DiminishedWarning": "{name} has become Diminished — succeed on a DC 13 Morale test or suffer another casualty.",
         "Disorganized": "Disorganized",
         "Disoriented": "Disoriented",
         "Exposed": "Exposed",

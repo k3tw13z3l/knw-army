@@ -119,7 +119,6 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
       }))
     ];
 
-    this._autoUpdateDiminished();
     return context;
   }
 
@@ -128,35 +127,6 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     if ((system.type === "infantry") && (system.experience === "levy"))
       return "modules/knw-army/assets/icons/levy.png";
     else return CONFIG.KNW.CHOICES.TYPE[system.type].img;
-  }
-
-  /**
-   * Returns true when HP is at or below half maximum. Pure — no side effects.
-   * The template reads system.diminished directly; this getter is used by
-   * _autoUpdateDiminished() to decide whether a write is needed.
-   * @returns {boolean}
-   */
-  get dimCheck() {
-    const { hp } = this.actor.system.attributes;
-    return hp.value <= hp.max / 2;
-  }
-
-  /**
-   * Writes system.diminished only when its stored value differs from what it
-   * should be. Safe to call from _prepareContext() because the guard prevents the
-   * write → re-render → write cycle that a naive update-always approach causes.
-   */
-  _autoUpdateDiminished() {
-    const system = this.actor.system;
-    const shouldBeDiminished = this.dimCheck;
-    const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.diminishable ?? false;
-
-    if (shouldBeDiminished && !system.diminished && isDiminishable) {
-      ui.notifications.warn("Succeed on a morale check DC13 or gain 1 Dam");
-      this.actor.update({"system.diminished": true});
-    } else if (!shouldBeDiminished && system.diminished) {
-      this.actor.update({"system.diminished": false});
-    }
   }
 
   get _tier() {
@@ -662,6 +632,24 @@ Hooks.on("ready", () => {
     } else if (!("hud" in status)) {
       status.hud = { actorTypes: nonWarfareTypes };
     }
+  }
+});
+
+Hooks.on("updateActor", (actor, changed, options, userId) => {
+  if (actor.type !== typeWarfare) return;
+  if (!foundry.utils.hasProperty(changed, "system.attributes.hp.value")) return;
+  if (game.user.id !== userId) return;
+
+  const system = actor.system;
+  const { hp } = system.attributes;
+  const shouldBeDiminished = hp.value <= hp.max / 2;
+  const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.diminishable ?? false;
+
+  if (shouldBeDiminished && !system.diminished && isDiminishable) {
+    ui.notifications.warn(game.i18n.format("KNW.Warfare.Conditions.DiminishedWarning", {name: actor.name}));
+    actor.update({"system.diminished": true});
+  } else if (!shouldBeDiminished && system.diminished) {
+    actor.update({"system.diminished": false});
   }
 });
 
