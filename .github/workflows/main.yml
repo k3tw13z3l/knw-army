@@ -41,15 +41,13 @@ jobs:
             module.json \
             README.md \
             assets/ \
-            images/ \
             fonts/ \
+            images/ \
+            lang/ \
+            packs/ \
             scripts/ \
-            fonts/ \
-            images/ \
-            assets/ \
             styles/ \
-            templates/ \
-            lang/
+            templates/
 
       - name: Create Release
         uses: ncipollo/release-action@v1
