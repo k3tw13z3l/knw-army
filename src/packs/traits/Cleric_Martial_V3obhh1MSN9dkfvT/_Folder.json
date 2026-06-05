@@ -1,0 +1,22 @@
+{
+  "_id": "V3obhh1MSN9dkfvT",
+  "name": "Cleric Martial",
+  "type": "Item",
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "folder": null,
+  "description": "",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": null,
+    "modifiedTime": 1744460251637,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!V3obhh1MSN9dkfvT"
+}

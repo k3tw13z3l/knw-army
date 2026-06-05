@@ -1,0 +1,22 @@
+{
+  "name": "Maneuvers",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "2Mh4FBcj6s1xCh0f",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": null,
+    "modifiedTime": 1744460259702,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!2Mh4FBcj6s1xCh0f"
+}

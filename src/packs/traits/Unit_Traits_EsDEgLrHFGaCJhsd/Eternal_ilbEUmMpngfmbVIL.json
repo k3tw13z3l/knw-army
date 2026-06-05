@@ -1,0 +1,64 @@
+{
+  "_id": "ilbEUmMpngfmbVIL",
+  "name": "Eternal",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "EsDEgLrHFGaCJhsd",
+  "sort": 300000,
+  "flags": {
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>This unit has advantage on Morale tests against undead or fiend units, and on the Morale test to attack units with the Harrowing trait. </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "",
+    "identifier": "eternal",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460262073,
+    "modifiedTime": 1776550752862,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!ilbEUmMpngfmbVIL"
+}

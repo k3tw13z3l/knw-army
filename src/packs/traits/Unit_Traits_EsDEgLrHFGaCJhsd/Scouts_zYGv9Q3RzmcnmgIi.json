@@ -1,0 +1,64 @@
+{
+  "_id": "zYGv9Q3RzmcnmgIi",
+  "name": "Scouts",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "EsDEgLrHFGaCJhsd",
+  "sort": 800000,
+  "flags": {
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>This unit can deploy into the rear rank of an opposed army. </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "",
+    "identifier": "scouts",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460262073,
+    "modifiedTime": 1776550753069,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!zYGv9Q3RzmcnmgIi"
+}

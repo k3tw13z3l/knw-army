@@ -1,0 +1,64 @@
+{
+  "folder": "qwWxCIhg4i8aKHf4",
+  "name": "M: Retreat",
+  "type": "feat",
+  "_id": "tGpYwJxgriktrtmK",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": {
+      "value": "<p class=\"p2\">This unit makes a DC 8 Command test. On a success, the unit is removed from the battle and its current casualties are recorded. On a failure, the unit suffers 1 casualty as opposed units take parting shots at it. If this does not break the unit, it is removed from the battle and its current casualties are recorded.<span class=\"Apple-converted-space\"> </span></p><p class=\"p3\">A commander must attempt the Retreat maneuver for all their units if the commander’s army is defeated in battle. But a commander can also attempt the Retreat maneuver with any unit on its activation in order to save the unit from a potentially worse fate.<span class=\"Apple-converted-space\"> </span></p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "",
+    "identifier": "m-retreat",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460246762,
+    "modifiedTime": 1744460246762,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!tGpYwJxgriktrtmK"
+}

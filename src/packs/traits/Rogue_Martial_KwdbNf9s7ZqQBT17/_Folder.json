@@ -1,0 +1,22 @@
+{
+  "name": "Rogue Martial",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "KwdbNf9s7ZqQBT17",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": null,
+    "modifiedTime": 1744460253829,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "description": "",
+  "_key": "!folders!KwdbNf9s7ZqQBT17"
+}

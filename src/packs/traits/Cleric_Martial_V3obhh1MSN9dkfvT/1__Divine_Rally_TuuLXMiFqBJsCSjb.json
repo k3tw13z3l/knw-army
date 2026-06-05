@@ -1,0 +1,65 @@
+{
+  "_id": "TuuLXMiFqBJsCSjb",
+  "name": "1: Divine Rally",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "V3obhh1MSN9dkfvT",
+  "sort": 100000,
+  "flags": {
+    "core": {},
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>At the beginning of this commander’s turn, a broken unit the commander controls that has not already been rallied can make a DC 13 Morale test. On a success, it gains 1d4 casualties and is returned to the battlefield according to normal deployment rules. Additionally, the unit has +2 to Defense and Toughness until the end of the battle. </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "Cleric",
+    "identifier": "1-divine-rally",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": "Item.VcMG51tcuLP5yEM2",
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460251619,
+    "modifiedTime": 1776550752545,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!TuuLXMiFqBJsCSjb"
+}

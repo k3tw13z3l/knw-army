@@ -1,0 +1,22 @@
+{
+  "_id": "EsDEgLrHFGaCJhsd",
+  "name": "Unit Traits",
+  "type": "Item",
+  "sorting": "a",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "folder": null,
+  "description": "",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": null,
+    "modifiedTime": 1744460262121,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!EsDEgLrHFGaCJhsd"
+}
