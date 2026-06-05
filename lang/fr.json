@@ -68,7 +68,7 @@
       "Ancestry": "Origine",
       "Commander": {
         "Label": "Commandant",
-        "None": "Aucun, déposez un personnage sur cette feuille pour assigner",
+        "None": "Déposez un personnage",
         "View": "Voir le Commandant",
         "Clear": "Effacer le Commandant",
         "Warning": {

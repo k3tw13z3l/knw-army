@@ -69,7 +69,7 @@
       "Ancestry": "Ancestry",
       "Commander": {
         "Label": "Commander",
-        "None": "None; drop a character on this sheet to assign",
+        "None": "Drop a character",
         "View": "View Commander",
         "Clear": "Clear Commander",
         "Warning": {
