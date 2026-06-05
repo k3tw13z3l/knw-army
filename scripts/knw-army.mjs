@@ -635,21 +635,20 @@ Hooks.on("ready", () => {
   }
 });
 
-Hooks.on("updateActor", (actor, changed, options, userId) => {
+Hooks.on("preUpdateActor", (actor, changed, options, userId) => {
   if (actor.type !== typeWarfare) return;
   if (!foundry.utils.hasProperty(changed, "system.attributes.hp.value")) return;
-  if (game.user.id !== userId) return;
 
-  const system = actor.system;
-  const { hp } = system.attributes;
-  const shouldBeDiminished = hp.value <= hp.max / 2;
-  const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[system.ancestry]?.diminishable ?? false;
+  const newHp = foundry.utils.getProperty(changed, "system.attributes.hp.value");
+  const maxHp = foundry.utils.getProperty(changed, "system.attributes.hp.max") ?? actor.system.attributes.hp.max;
+  const shouldBeDiminished = newHp <= maxHp / 2;
+  const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[actor.system.ancestry]?.diminishable ?? false;
 
-  if (shouldBeDiminished && !system.diminished && isDiminishable) {
+  if (shouldBeDiminished && !actor.system.diminished && isDiminishable) {
     ui.notifications.warn(game.i18n.format("KNW.Warfare.Conditions.DiminishedWarning", {name: actor.name}));
-    actor.update({"system.diminished": true});
-  } else if (!shouldBeDiminished && system.diminished) {
-    actor.update({"system.diminished": false});
+    foundry.utils.setProperty(changed, "system.diminished", true);
+  } else if (!shouldBeDiminished && actor.system.diminished) {
+    foundry.utils.setProperty(changed, "system.diminished", false);
   }
 });
 
