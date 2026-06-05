@@ -609,7 +609,7 @@ Hooks.once("init", () => {
   Object.assign(CONFIG.DND5E.conditionTypes, {
     broken:       { name: "Broken",       img: "systems/dnd5e/icons/svg/statuses/incapacitated.svg", reference: warfareConditionRef },
     disbanded:    { name: "Disbanded",    img: "systems/dnd5e/icons/svg/statuses/dead.svg",          reference: warfareConditionRef },
-    diminished:   { name: "Diminished",   img: "systems/dnd5e/icons/svg/statuses/wounded.svg",       reference: warfareConditionRef },
+    diminished:   { name: "Diminished",   img: "systems/dnd5e/icons/svg/statuses/bloodied.svg",       reference: warfareConditionRef },
     disorganized: { name: "Disorganized", img: "systems/dnd5e/icons/svg/statuses/stunned.svg",       reference: warfareConditionRef },
     disoriented:  { name: "Disoriented",  img: "modules/knw-army/assets/icons/disoriented.svg",      reference: warfareConditionRef },
     exposed:      { name: "Exposed",      img: "modules/knw-army/assets/icons/exposed.svg",          reference: warfareConditionRef },
