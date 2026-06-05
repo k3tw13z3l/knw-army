@@ -52,7 +52,7 @@
     "disposition": 1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -121,7 +121,7 @@
   },
   "items": [
     {
-      "folder": null,
+      "folder": "qwWxCIhg4i8aKHf4",
       "name": "R: Set for Charge",
       "type": "feat",
       "_id": "s3XpGLIHSFdQf2Kr",
@@ -258,7 +258,7 @@
       "type": "feat",
       "img": "icons/svg/item-bag.svg",
       "effects": [],
-      "folder": null,
+      "folder": "qwWxCIhg4i8aKHf4",
       "sort": 400000,
       "flags": {
         "core": {},
@@ -385,7 +385,7 @@
     }
   ],
   "effects": [],
-  "folder": null,
+  "folder": "nAZzHvTQEXzUa3rS",
   "ownership": {
     "default": 2,
     "YbxrIigtTIkCJ5a4": 3

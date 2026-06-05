@@ -1,0 +1,22 @@
+{
+  "name": "Gnolls",
+  "sorting": "a",
+  "folder": null,
+  "type": "Actor",
+  "_id": "DEqC8YLUtfutCrtX",
+  "description": "",
+  "sort": 100000,
+  "color": "#b02e17",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460190064,
+    "modifiedTime": 1745155056508,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!DEqC8YLUtfutCrtX"
+}

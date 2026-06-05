@@ -1,25 +1,24 @@
 {
-  "folder": null,
-  "name": "\"Riders of the Coedwig\"",
+  "name": "Human Cavalry",
   "type": "knw-army.warfare",
-  "_id": "Hnpfs3dZ0jRIVA3E",
-  "img": "shared_media/Portraits/warfare/CentaurCav01.webp?1743936526127",
+  "_id": "XZll3nLzLAJgnlMj",
+  "img": "shared_media/Portraits/warfare/humancav.webp",
   "system": {
-    "commander": "dpz9Qw9UaxepvU6V",
-    "ancestry": "centaur",
-    "experience": "veteran",
-    "gear": "heavy",
+    "commander": "Qx3N7wSDb8UnFPcP",
+    "ancestry": "human",
+    "experience": "regular",
+    "gear": "light",
     "type": "cavalry",
-    "atk": 5,
-    "def": 13,
-    "pow": 4,
-    "tou": 12,
-    "mor": 0,
-    "com": 2,
+    "atk": 3,
+    "def": 12,
+    "pow": 3,
+    "tou": 10,
+    "mor": 1,
+    "com": 1,
     "attacks": 1,
     "dmg": 2,
     "mov": 1,
-    "tier": 3,
+    "tier": 1,
     "size": {
       "max": 6,
       "value": 6
@@ -28,15 +27,15 @@
     "diminished": false
   },
   "prototypeToken": {
-    "name": "\"Riders of the Coedwig\"",
+    "name": "Human Cavalry",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
-    "prependAdjective": false,
+    "prependAdjective": true,
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/centaurriders.webp",
+      "src": "shared_media/Tokens/warfare/cavalryhum.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -51,10 +50,10 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": 0,
+    "disposition": 1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -123,22 +122,23 @@
   },
   "items": [],
   "effects": [],
-  "sort": 0,
+  "folder": "nAZzHvTQEXzUa3rS",
+  "sort": 175000,
   "ownership": {
-    "default": 0,
+    "default": 2,
     "YbxrIigtTIkCJ5a4": 3
   },
   "flags": {},
   "_stats": {
-    "compendiumSource": "Actor.Hnpfs3dZ0jRIVA3E",
+    "compendiumSource": "Actor.XZll3nLzLAJgnlMj",
     "duplicateSource": null,
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
-    "createdTime": 1744460182072,
-    "modifiedTime": 1744460182072,
+    "createdTime": 1744460178409,
+    "modifiedTime": 1744460178409,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_key": "!actors!Hnpfs3dZ0jRIVA3E"
+  "_key": "!actors!XZll3nLzLAJgnlMj"
 }

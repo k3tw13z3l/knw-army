@@ -1,5 +1,5 @@
 {
-  "folder": null,
+  "folder": "DEqC8YLUtfutCrtX",
   "name": "\"Bone Gnashers\"",
   "type": "knw-army.warfare",
   "img": "shared_media/Portraits/warfare/gnollPack.webp?1745673751509",
@@ -64,7 +64,7 @@
     "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null

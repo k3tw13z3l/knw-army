@@ -1,5 +1,5 @@
 {
-  "folder": null,
+  "folder": "fsQ4VwvuXemk5cJ3",
   "name": "\"Amon Sul Wights\"",
   "type": "knw-army.warfare",
   "img": "shared_media/Portraits/warfare/amon_sul_wights.webp",
@@ -64,7 +64,7 @@
     "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -205,7 +205,7 @@
   },
   "items": [
     {
-      "folder": null,
+      "folder": "EsDEgLrHFGaCJhsd",
       "name": "R: Warbred",
       "type": "feat",
       "_id": "mYTLsf801pCimq66",

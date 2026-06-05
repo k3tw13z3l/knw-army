@@ -1,25 +1,25 @@
 {
-  "folder": null,
-  "name": "Gnoll Hunters",
+  "folder": "c22u9roSAJwDTTve",
+  "name": "Elf Archers",
   "type": "knw-army.warfare",
-  "_id": "b0UR8ndW8xi00DQj",
-  "img": "shared_media/Portraits/warfare/frostgrave_gnolls_by_devburmak_dahiewa-pre.webp?1744208033282",
+  "_id": "JehQRfxCY8M0agTL",
+  "img": "shared_media/Portraits/warfare/elfarcher.webp",
   "system": {
-    "commander": "rai06qK6lZeTN3CA",
-    "ancestry": "gnoll",
+    "commander": "dpz9Qw9UaxepvU6V",
+    "ancestry": "elf",
     "experience": "regular",
     "gear": "light",
-    "type": "infantry",
-    "atk": 5,
-    "def": 14,
+    "type": "artillery",
+    "atk": 4,
+    "def": 10,
     "pow": 2,
-    "tou": 12,
-    "mor": 3,
+    "tou": 8,
+    "mor": 0,
     "com": 0,
     "attacks": 1,
     "dmg": 1,
     "mov": 1,
-    "tier": 2,
+    "tier": 1,
     "size": {
       "max": 6,
       "value": 6
@@ -28,7 +28,7 @@
     "diminished": false
   },
   "prototypeToken": {
-    "name": "Gnoll Hunters",
+    "name": "Elf Longbowmen",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
@@ -36,7 +36,7 @@
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "tokenizer/npc-images/gnoll_hunters.token.webp?1744208033282",
+      "src": "shared_media/Tokens/warfare/archerself.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -51,10 +51,10 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -1,
+    "disposition": 0,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -123,13 +123,13 @@
   },
   "items": [
     {
-      "_id": "mTBnTdgwDZtkPtBa",
-      "name": "Scouts",
+      "_id": "gGY1mLGSmnCMqr5h",
+      "name": "Mobile",
       "type": "feat",
       "img": "icons/svg/item-bag.svg",
       "effects": [],
-      "folder": null,
-      "sort": 800000,
+      "folder": "EsDEgLrHFGaCJhsd",
+      "sort": 700000,
       "flags": {
         "tidy5e-sheet": {},
         "dnd5e": {
@@ -140,7 +140,7 @@
       },
       "system": {
         "description": {
-          "value": "<p>This unit can deploy into the rear rank of an opposed army. </p>",
+          "value": "<p>This unit has advantage on the Command test when using the Follow Up maneuver, and can move back 2 spaces when using the Withdraw maneuver. </p>",
           "chat": ""
         },
         "source": {
@@ -159,7 +159,7 @@
           "subtype": ""
         },
         "requirements": "",
-        "identifier": "scouts",
+        "identifier": "mobile",
         "activities": {},
         "advancement": [],
         "enchant": {},
@@ -174,36 +174,36 @@
         "YbxrIigtTIkCJ5a4": 3
       },
       "_stats": {
-        "compendiumSource": "Compendium.world.army.Item.zYGv9Q3RzmcnmgIi",
+        "compendiumSource": "Compendium.world.army.Item.DuXatMDrCZsOJyUi",
         "duplicateSource": null,
         "coreVersion": "13.351",
         "systemId": "dnd5e",
         "systemVersion": "4.3.8",
         "createdTime": null,
-        "modifiedTime": 1776550751828,
+        "modifiedTime": 1776550751624,
         "lastModifiedBy": "YbxrIigtTIkCJ5a4",
         "exportSource": null
       },
-      "_key": "!actors.items!b0UR8ndW8xi00DQj.mTBnTdgwDZtkPtBa"
+      "_key": "!actors.items!JehQRfxCY8M0agTL.gGY1mLGSmnCMqr5h"
     }
   ],
   "effects": [],
-  "sort": 300000,
+  "sort": 0,
   "ownership": {
     "default": 0,
     "YbxrIigtTIkCJ5a4": 3
   },
   "flags": {},
   "_stats": {
-    "compendiumSource": "Actor.b0UR8ndW8xi00DQj",
+    "compendiumSource": "Actor.JehQRfxCY8M0agTL",
     "duplicateSource": null,
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
-    "createdTime": 1744460190081,
-    "modifiedTime": 1744550187165,
+    "createdTime": 1744460182072,
+    "modifiedTime": 1744460182072,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_key": "!actors!b0UR8ndW8xi00DQj"
+  "_key": "!actors!JehQRfxCY8M0agTL"
 }

@@ -1,27 +1,27 @@
 {
-  "folder": null,
-  "name": "Skeletal Cavalry",
+  "folder": "fsQ4VwvuXemk5cJ3",
+  "name": "Bone Bags",
   "type": "knw-army.warfare",
-  "img": "shared_media/Portraits/warfare/skeletalcavalry.webp",
+  "img": "shared_media/Portraits/warfare/bone_bags.webp",
   "system": {
     "commander": "FF9pgtrKjyBsfpWL",
     "ancestry": "undead",
-    "experience": "regular",
+    "experience": "levy",
     "gear": "light",
-    "type": "cavalry",
-    "atk": 3,
-    "def": 11,
-    "pow": 2,
-    "tou": 10,
-    "mor": 0,
+    "type": "infantry",
+    "atk": 2,
+    "def": 9,
+    "pow": 1,
+    "tou": 12,
+    "mor": -2,
     "com": 0,
     "attacks": 1,
-    "dmg": 2,
+    "dmg": 1,
     "mov": 1,
     "tier": 1,
     "size": {
-      "max": 6,
-      "value": 6
+      "max": 4,
+      "value": 4
     },
     "attributes": {
       "movement": {
@@ -38,7 +38,7 @@
     "battles": 0
   },
   "prototypeToken": {
-    "name": "Skeletal Cavalry",
+    "name": "Bone Bags",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
@@ -46,7 +46,7 @@
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/skeletalcavalry.webp",
+      "src": "shared_media/Tokens/warfare/bone_bags.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -64,7 +64,7 @@
     "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -216,12 +216,12 @@
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "createdTime": 1745156961045,
-    "modifiedTime": 1745156969660,
+    "createdTime": 1745156952639,
+    "modifiedTime": 1745156966563,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_id": "9nq9Q7Sze60cj9SS",
-  "sort": 300000,
-  "_key": "!actors!9nq9Q7Sze60cj9SS"
+  "_id": "MKBqkpWm0nKWupkf",
+  "sort": 200000,
+  "_key": "!actors!MKBqkpWm0nKWupkf"
 }

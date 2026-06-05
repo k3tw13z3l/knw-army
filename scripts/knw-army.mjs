@@ -410,7 +410,7 @@ function warfareTokenBar(app, html, context, options) {
     for (const grp of bar.querySelectorAll("optgroup")) {
       switch (grp.label) {
         case game.i18n.localize("TOKEN.BarAttributes"):
-          grp.innerHTML = `<option value="size">${game.i18n.localize(
+          grp.innerHTML = `<option value="attributes.hp">${game.i18n.localize(
             "KNW.Warfare.Statistics.size.long"
           )}</option>`;
           break;

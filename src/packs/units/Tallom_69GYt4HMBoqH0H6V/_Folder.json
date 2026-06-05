@@ -1,0 +1,22 @@
+{
+  "_id": "69GYt4HMBoqH0H6V",
+  "name": "Tallom",
+  "type": "Actor",
+  "sorting": "m",
+  "sort": 100000,
+  "color": "#0d4a0e",
+  "flags": {},
+  "folder": null,
+  "description": "",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460185768,
+    "modifiedTime": 1744460185810,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!69GYt4HMBoqH0H6V"
+}

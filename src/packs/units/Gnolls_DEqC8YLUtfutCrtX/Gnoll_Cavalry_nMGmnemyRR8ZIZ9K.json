@@ -1,20 +1,20 @@
 {
-  "name": "Human Cavalry",
+  "folder": "DEqC8YLUtfutCrtX",
+  "name": "Gnoll Cavalry",
   "type": "knw-army.warfare",
-  "_id": "XZll3nLzLAJgnlMj",
-  "img": "shared_media/Portraits/warfare/humancav.webp",
+  "img": "shared_media/Portraits/warfare/gnollrider.webp",
   "system": {
-    "commander": "Qx3N7wSDb8UnFPcP",
-    "ancestry": "human",
+    "commander": "RcE7MXxZaL9BWTFc",
+    "ancestry": "gnoll",
     "experience": "regular",
     "gear": "light",
     "type": "cavalry",
-    "atk": 3,
+    "atk": 4,
     "def": 12,
-    "pow": 3,
+    "pow": 2,
     "tou": 10,
     "mor": 1,
-    "com": 1,
+    "com": 0,
     "attacks": 1,
     "dmg": 2,
     "mov": 1,
@@ -27,20 +27,20 @@
     "diminished": false
   },
   "prototypeToken": {
-    "name": "Human Cavalry",
+    "name": "Gnoll Cavalry",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": true,
-    "width": 2,
+    "width": 1,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/cavalryhum.webp",
+      "src": "shared_media/Portraits/warfare/hyena-hunter.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
       "offsetY": 0,
-      "fit": "width",
+      "fit": "contain",
       "scaleX": 1,
       "scaleY": 1,
       "rotation": 0,
@@ -50,10 +50,10 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": 1,
+    "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -104,7 +104,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 0,
+      "effects": 1,
       "subject": {
         "scale": 1,
         "texture": null
@@ -120,25 +120,82 @@
     },
     "movementAction": null
   },
-  "items": [],
+  "items": [
+    {
+      "folder": "EsDEgLrHFGaCJhsd",
+      "name": "Dire Hyena Mounts",
+      "type": "feat",
+      "_id": "xrzkrMfi9833EgpI",
+      "img": "systems/dnd5e/icons/svg/items/feature.svg",
+      "system": {
+        "activities": {},
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "description": {
+          "value": "<p>This unit has advantage on Attack tests against diminished units.</p>",
+          "chat": ""
+        },
+        "identifier": "new-item",
+        "source": {
+          "revision": 1,
+          "rules": "2024"
+        },
+        "advancement": [],
+        "cover": null,
+        "crewed": false,
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "type": {
+          "value": "",
+          "subtype": ""
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.knw-army.traits.Item.WBJFrhJGZaJuqn21",
+        "duplicateSource": null,
+        "coreVersion": "13.348",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      },
+      "_key": "!actors.items!nMGmnemyRR8ZIZ9K.xrzkrMfi9833EgpI"
+    }
+  ],
   "effects": [],
-  "folder": null,
-  "sort": 175000,
   "ownership": {
-    "default": 2,
+    "default": 0,
     "YbxrIigtTIkCJ5a4": 3
   },
   "flags": {},
   "_stats": {
-    "compendiumSource": "Actor.XZll3nLzLAJgnlMj",
+    "compendiumSource": null,
     "duplicateSource": null,
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
-    "createdTime": 1744460178409,
-    "modifiedTime": 1744460178409,
+    "createdTime": 1744550177489,
+    "modifiedTime": 1744550187165,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_key": "!actors!XZll3nLzLAJgnlMj"
+  "_id": "nMGmnemyRR8ZIZ9K",
+  "sort": 200000,
+  "_key": "!actors!nMGmnemyRR8ZIZ9K"
 }

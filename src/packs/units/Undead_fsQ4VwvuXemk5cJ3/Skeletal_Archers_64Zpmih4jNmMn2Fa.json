@@ -1,19 +1,19 @@
 {
-  "folder": null,
-  "name": "Bone Bags",
+  "folder": "fsQ4VwvuXemk5cJ3",
+  "name": "Skeletal Archers",
   "type": "knw-army.warfare",
-  "img": "shared_media/Portraits/warfare/bone_bags.webp",
+  "img": "shared_media/Portraits/warfare/skeletalarchers.webp",
   "system": {
     "commander": "FF9pgtrKjyBsfpWL",
     "ancestry": "undead",
-    "experience": "levy",
+    "experience": "regular",
     "gear": "light",
-    "type": "infantry",
-    "atk": 2,
+    "type": "artillery",
+    "atk": 3,
     "def": 9,
     "pow": 1,
-    "tou": 12,
-    "mor": -2,
+    "tou": 8,
+    "mor": 0,
     "com": 0,
     "attacks": 1,
     "dmg": 1,
@@ -21,7 +21,7 @@
     "tier": 1,
     "size": {
       "max": 4,
-      "value": 4
+      "value": 6
     },
     "attributes": {
       "movement": {
@@ -38,7 +38,7 @@
     "battles": 0
   },
   "prototypeToken": {
-    "name": "Bone Bags",
+    "name": "Skeletal Archers",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
@@ -46,7 +46,7 @@
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/bone_bags.webp",
+      "src": "shared_media/Tokens/warfare/skeletalarchers.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -64,7 +64,7 @@
     "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -216,12 +216,12 @@
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "createdTime": 1745156952639,
-    "modifiedTime": 1745156966563,
+    "createdTime": 1745156956606,
+    "modifiedTime": 1745156968175,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_id": "MKBqkpWm0nKWupkf",
-  "sort": 200000,
-  "_key": "!actors!MKBqkpWm0nKWupkf"
+  "_id": "64Zpmih4jNmMn2Fa",
+  "sort": 150000,
+  "_key": "!actors!64Zpmih4jNmMn2Fa"
 }

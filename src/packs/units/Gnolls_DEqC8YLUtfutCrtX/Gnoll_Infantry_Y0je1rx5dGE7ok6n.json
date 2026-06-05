@@ -1,21 +1,21 @@
 {
-  "folder": null,
-  "name": "Elf Archers",
+  "folder": "DEqC8YLUtfutCrtX",
+  "name": "Gnoll Infantry",
   "type": "knw-army.warfare",
-  "_id": "JehQRfxCY8M0agTL",
-  "img": "shared_media/Portraits/warfare/elfarcher.webp",
+  "_id": "Y0je1rx5dGE7ok6n",
+  "img": "shared_media/Portraits/warfare/GnollPack02.webp",
   "system": {
-    "commander": "dpz9Qw9UaxepvU6V",
-    "ancestry": "elf",
+    "commander": "LIAiOwxWBs3TXnVA",
+    "ancestry": "gnoll",
     "experience": "regular",
     "gear": "light",
-    "type": "artillery",
+    "type": "infantry",
     "atk": 4,
-    "def": 10,
+    "def": 12,
     "pow": 2,
-    "tou": 8,
-    "mor": 0,
-    "com": 0,
+    "tou": 12,
+    "mor": 1,
+    "com": -1,
     "attacks": 1,
     "dmg": 1,
     "mov": 1,
@@ -28,7 +28,7 @@
     "diminished": false
   },
   "prototypeToken": {
-    "name": "Elf Longbowmen",
+    "name": "Gnoll Infantry",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
@@ -36,7 +36,7 @@
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/archerself.webp",
+      "src": "shared_media/Tokens/warfare/infantrygnoll.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -51,10 +51,10 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": 0,
+    "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -121,89 +121,24 @@
     },
     "movementAction": null
   },
-  "items": [
-    {
-      "_id": "gGY1mLGSmnCMqr5h",
-      "name": "Mobile",
-      "type": "feat",
-      "img": "icons/svg/item-bag.svg",
-      "effects": [],
-      "folder": null,
-      "sort": 700000,
-      "flags": {
-        "tidy5e-sheet": {},
-        "dnd5e": {
-          "riders": {
-            "activity": []
-          }
-        }
-      },
-      "system": {
-        "description": {
-          "value": "<p>This unit has advantage on the Command test when using the Follow Up maneuver, and can move back 2 spaces when using the Withdraw maneuver. </p>",
-          "chat": ""
-        },
-        "source": {
-          "rules": "2014",
-          "revision": 1
-        },
-        "cover": null,
-        "crewed": false,
-        "uses": {
-          "max": "",
-          "spent": 0,
-          "recovery": []
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "requirements": "",
-        "identifier": "mobile",
-        "activities": {},
-        "advancement": [],
-        "enchant": {},
-        "prerequisites": {
-          "level": null,
-          "repeatable": false
-        },
-        "properties": []
-      },
-      "ownership": {
-        "default": 0,
-        "YbxrIigtTIkCJ5a4": 3
-      },
-      "_stats": {
-        "compendiumSource": "Compendium.world.army.Item.DuXatMDrCZsOJyUi",
-        "duplicateSource": null,
-        "coreVersion": "13.351",
-        "systemId": "dnd5e",
-        "systemVersion": "4.3.8",
-        "createdTime": null,
-        "modifiedTime": 1776550751624,
-        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
-        "exportSource": null
-      },
-      "_key": "!actors.items!JehQRfxCY8M0agTL.gGY1mLGSmnCMqr5h"
-    }
-  ],
+  "items": [],
   "effects": [],
-  "sort": 0,
+  "sort": 100000,
   "ownership": {
     "default": 0,
     "YbxrIigtTIkCJ5a4": 3
   },
   "flags": {},
   "_stats": {
-    "compendiumSource": "Actor.JehQRfxCY8M0agTL",
+    "compendiumSource": "Actor.Y0je1rx5dGE7ok6n",
     "duplicateSource": null,
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
-    "createdTime": 1744460182072,
-    "modifiedTime": 1744460182072,
+    "createdTime": 1744460190081,
+    "modifiedTime": 1744550187165,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_key": "!actors!JehQRfxCY8M0agTL"
+  "_key": "!actors!Y0je1rx5dGE7ok6n"
 }

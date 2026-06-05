@@ -1,26 +1,26 @@
 {
-  "folder": null,
-  "name": "Skeletal Archers",
+  "folder": "fsQ4VwvuXemk5cJ3",
+  "name": "Skeletal Cavalry",
   "type": "knw-army.warfare",
-  "img": "shared_media/Portraits/warfare/skeletalarchers.webp",
+  "img": "shared_media/Portraits/warfare/skeletalcavalry.webp",
   "system": {
     "commander": "FF9pgtrKjyBsfpWL",
     "ancestry": "undead",
     "experience": "regular",
     "gear": "light",
-    "type": "artillery",
+    "type": "cavalry",
     "atk": 3,
-    "def": 9,
-    "pow": 1,
-    "tou": 8,
+    "def": 11,
+    "pow": 2,
+    "tou": 10,
     "mor": 0,
     "com": 0,
     "attacks": 1,
-    "dmg": 1,
+    "dmg": 2,
     "mov": 1,
     "tier": 1,
     "size": {
-      "max": 4,
+      "max": 6,
       "value": 6
     },
     "attributes": {
@@ -38,7 +38,7 @@
     "battles": 0
   },
   "prototypeToken": {
-    "name": "Skeletal Archers",
+    "name": "Skeletal Cavalry",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
@@ -46,7 +46,7 @@
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "shared_media/Tokens/warfare/skeletalarchers.webp",
+      "src": "shared_media/Tokens/warfare/skeletalcavalry.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -64,7 +64,7 @@
     "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -216,12 +216,12 @@
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "createdTime": 1745156956606,
-    "modifiedTime": 1745156968175,
+    "createdTime": 1745156961045,
+    "modifiedTime": 1745156969660,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_id": "64Zpmih4jNmMn2Fa",
-  "sort": 150000,
-  "_key": "!actors!64Zpmih4jNmMn2Fa"
+  "_id": "9nq9Q7Sze60cj9SS",
+  "sort": 300000,
+  "_key": "!actors!9nq9Q7Sze60cj9SS"
 }

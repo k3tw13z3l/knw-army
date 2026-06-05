@@ -1,0 +1,22 @@
+{
+  "_id": "c22u9roSAJwDTTve",
+  "name": "Coedwig",
+  "type": "Actor",
+  "sorting": "a",
+  "sort": 50000,
+  "color": "#126413",
+  "flags": {},
+  "folder": null,
+  "description": "",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460182053,
+    "modifiedTime": 1744548352776,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_key": "!folders!c22u9roSAJwDTTve"
+}

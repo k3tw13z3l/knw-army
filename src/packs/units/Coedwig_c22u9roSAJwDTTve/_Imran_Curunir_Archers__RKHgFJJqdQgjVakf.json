@@ -1,5 +1,5 @@
 {
-  "folder": null,
+  "folder": "c22u9roSAJwDTTve",
   "name": "\"Imran Curunir Archers\"",
   "type": "knw-army.warfare",
   "_id": "RKHgFJJqdQgjVakf",
@@ -54,7 +54,7 @@
     "disposition": 0,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -128,7 +128,7 @@
       "type": "feat",
       "img": "icons/svg/item-bag.svg",
       "effects": [],
-      "folder": null,
+      "folder": "EsDEgLrHFGaCJhsd",
       "sort": 400000,
       "flags": {
         "tidy5e-sheet": {},
@@ -192,7 +192,7 @@
       "type": "feat",
       "img": "icons/svg/item-bag.svg",
       "effects": [],
-      "folder": null,
+      "folder": "EsDEgLrHFGaCJhsd",
       "sort": 700000,
       "flags": {
         "tidy5e-sheet": {},

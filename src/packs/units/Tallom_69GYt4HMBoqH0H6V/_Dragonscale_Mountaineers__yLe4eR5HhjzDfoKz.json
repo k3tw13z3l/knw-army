@@ -1,23 +1,25 @@
 {
-  "name": "Human Militia",
+  "folder": "69GYt4HMBoqH0H6V",
+  "name": "\"Dragonscale Mountaineers\"",
   "type": "knw-army.warfare",
-  "img": "shared_media/Portraits/warfare/humninf.webp?1743890189849",
+  "_id": "yLe4eR5HhjzDfoKz",
+  "img": "shared_media/Portraits/warfare/dragonscale.webp?1743938811224",
   "system": {
-    "commander": "Qx3N7wSDb8UnFPcP",
+    "commander": "vXBMosgDkgnVCk49",
     "ancestry": "human",
-    "experience": "levy",
-    "gear": "light",
+    "experience": "veteran",
+    "gear": "medium",
     "type": "infantry",
-    "atk": 2,
-    "def": 11,
-    "pow": 2,
-    "tou": 12,
-    "mor": 0,
-    "com": 1,
+    "atk": 4,
+    "def": 14,
+    "pow": 4,
+    "tou": 14,
+    "mor": 3,
+    "com": 3,
     "attacks": 1,
     "dmg": 1,
     "mov": 1,
-    "tier": 1,
+    "tier": 2,
     "size": {
       "max": 6,
       "value": 6
@@ -26,15 +28,15 @@
     "diminished": false
   },
   "prototypeToken": {
-    "name": "Human Militia",
+    "name": "\"Dragonscale Mountaineers\"",
     "displayName": 30,
     "actorLink": false,
     "appendNumber": false,
-    "prependAdjective": true,
+    "prependAdjective": false,
     "width": 2,
     "height": 1,
     "texture": {
-      "src": "tokenizer/npc-images/human_militia.token.webp?1743890189849",
+      "src": "shared_media/Tokens/warfare/dragonscale.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -49,10 +51,10 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": 1,
+    "disposition": -1,
     "displayBars": 20,
     "bar1": {
-      "attribute": null
+      "attribute": "attributes.hp"
     },
     "bar2": {
       "attribute": null
@@ -121,10 +123,270 @@
   },
   "items": [
     {
-      "folder": null,
+      "_id": "Irx9ae3i0M9hzAW5",
+      "name": "Scouts",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "EsDEgLrHFGaCJhsd",
+      "sort": 800000,
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>This unit can deploy into the rear rank of an opposed army. </p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "scouts",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.zYGv9Q3RzmcnmgIi",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550751868,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!yLe4eR5HhjzDfoKz.Irx9ae3i0M9hzAW5"
+    },
+    {
+      "_id": "YueL3cuLa7EtY9Hh",
+      "name": "R: Follow Up",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "qwWxCIhg4i8aKHf4",
+      "sort": 400000,
+      "flags": {
+        "core": {},
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>As a reaction to an opposed unit adjacent to this unit breaking or moving out of its space, this unit makes a DC 8 Command test. On a success, this unit moves into the opposed unit’s former space. </p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "p109",
+          "revision": 1,
+          "rules": "2014"
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "Infantry",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "reaction",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "m-follow-up",
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Item.VcMG51tcuLP5yEM2",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550751884,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!yLe4eR5HhjzDfoKz.YueL3cuLa7EtY9Hh"
+    },
+    {
+      "folder": "EsDEgLrHFGaCJhsd",
+      "name": "M: Evasive Maneuvers",
+      "type": "feat",
+      "_id": "7KVBgHy6MfY9fnnx",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p class=\"p2\">As a reaction when an opposed artillery unit makes an Attack test against this unit, impose disadvantage on the opposed unit’s Attack test. Recharge 5–6.<span class=\"Apple-converted-space\"> </span></p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "m-evasive-maneuvers",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "effects": [],
+      "sort": 500000,
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.egxcwocSg8NsVsIh",
+        "duplicateSource": null,
+        "coreVersion": "13.348",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      },
+      "_key": "!actors.items!yLe4eR5HhjzDfoKz.7KVBgHy6MfY9fnnx"
+    },
+    {
+      "folder": "qwWxCIhg4i8aKHf4",
       "name": "R: Set for Charge",
       "type": "feat",
-      "_id": "s3XpGLIHSFdQf2Kr",
+      "_id": "s0yFJ2e77Ii1zEqH",
       "img": "icons/svg/item-bag.svg",
       "system": {
         "description": {
@@ -250,159 +512,26 @@
         "lastModifiedBy": null,
         "exportSource": null
       },
-      "_key": "!actors.items!MpgyqalG1QHBgsyL.s3XpGLIHSFdQf2Kr"
-    },
-    {
-      "_id": "jzJ3l1sNA3wVx92F",
-      "name": "R: Follow Up",
-      "type": "feat",
-      "img": "icons/svg/item-bag.svg",
-      "effects": [],
-      "folder": null,
-      "sort": 400000,
-      "flags": {
-        "core": {},
-        "dnd5e": {
-          "riders": {
-            "activity": []
-          }
-        }
-      },
-      "system": {
-        "description": {
-          "value": "<p>As a reaction to an opposed unit adjacent to this unit breaking or moving out of its space, this unit makes a DC 8 Command test. On a success, this unit moves into the opposed unit’s former space. </p>",
-          "chat": ""
-        },
-        "source": {
-          "custom": "p109",
-          "revision": 1,
-          "rules": "2014"
-        },
-        "cover": null,
-        "crewed": false,
-        "uses": {
-          "max": "",
-          "recovery": [],
-          "spent": 0
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "requirements": "Infantry",
-        "activities": {
-          "dnd5eactivity000": {
-            "_id": "dnd5eactivity000",
-            "type": "utility",
-            "activation": {
-              "type": "reaction",
-              "value": 1,
-              "condition": "",
-              "override": false
-            },
-            "consumption": {
-              "targets": [],
-              "scaling": {
-                "allowed": false,
-                "max": ""
-              },
-              "spellSlot": true
-            },
-            "description": {
-              "chatFlavor": ""
-            },
-            "duration": {
-              "concentration": false,
-              "value": "",
-              "units": "",
-              "special": "",
-              "override": false
-            },
-            "effects": [],
-            "range": {
-              "units": "",
-              "special": "",
-              "override": false
-            },
-            "target": {
-              "template": {
-                "count": "",
-                "contiguous": false,
-                "type": "",
-                "size": "",
-                "width": "",
-                "height": "",
-                "units": ""
-              },
-              "affects": {
-                "count": "",
-                "type": "",
-                "choice": false,
-                "special": ""
-              },
-              "prompt": true,
-              "override": false
-            },
-            "uses": {
-              "spent": 0,
-              "max": "",
-              "recovery": []
-            },
-            "roll": {
-              "formula": "",
-              "name": "",
-              "prompt": false,
-              "visible": false
-            },
-            "sort": 0
-          }
-        },
-        "identifier": "r-follow-up",
-        "advancement": [],
-        "enchant": {},
-        "prerequisites": {
-          "level": null,
-          "repeatable": false
-        },
-        "properties": []
-      },
-      "ownership": {
-        "default": 0,
-        "YbxrIigtTIkCJ5a4": 3
-      },
-      "_stats": {
-        "compendiumSource": "Item.VcMG51tcuLP5yEM2",
-        "duplicateSource": null,
-        "coreVersion": "13.351",
-        "systemId": "dnd5e",
-        "systemVersion": "5.2.5",
-        "createdTime": null,
-        "modifiedTime": 1776550751688,
-        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
-        "exportSource": null
-      },
-      "_key": "!actors.items!MpgyqalG1QHBgsyL.jzJ3l1sNA3wVx92F"
+      "_key": "!actors.items!yLe4eR5HhjzDfoKz.s0yFJ2e77Ii1zEqH"
     }
   ],
   "effects": [],
-  "folder": null,
+  "sort": 0,
   "ownership": {
-    "default": 2,
+    "default": 0,
     "YbxrIigtTIkCJ5a4": 3
   },
   "flags": {},
   "_stats": {
-    "compendiumSource": null,
+    "compendiumSource": "Actor.yLe4eR5HhjzDfoKz",
     "duplicateSource": null,
     "coreVersion": "13.348",
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
-    "createdTime": 1744548330856,
-    "modifiedTime": 1744548330856,
+    "createdTime": 1744460185786,
+    "modifiedTime": 1744460185786,
     "lastModifiedBy": "YbxrIigtTIkCJ5a4",
     "exportSource": null
   },
-  "_id": "MpgyqalG1QHBgsyL",
-  "sort": 0,
-  "_key": "!actors!MpgyqalG1QHBgsyL"
+  "_key": "!actors!yLe4eR5HhjzDfoKz"
 }

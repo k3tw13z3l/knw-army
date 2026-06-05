@@ -1,0 +1,22 @@
+{
+  "name": "Undead",
+  "sorting": "a",
+  "folder": null,
+  "type": "Actor",
+  "description": "",
+  "sort": 100000,
+  "color": "#b02e17",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1745155035460,
+    "modifiedTime": 1745155048699,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4"
+  },
+  "_id": "fsQ4VwvuXemk5cJ3",
+  "_key": "!folders!fsQ4VwvuXemk5cJ3"
+}
