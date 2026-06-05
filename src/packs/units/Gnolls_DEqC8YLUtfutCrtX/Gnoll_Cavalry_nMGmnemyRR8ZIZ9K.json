@@ -19,12 +19,18 @@
     "dmg": 2,
     "mov": 1,
     "tier": 1,
-    "size": {
-      "max": 6,
-      "value": 6
-    },
     "config": false,
-    "diminished": false
+    "diminished": false,
+    "attributes": {
+      "movement": {
+        "units": "ft",
+        "walk": 4
+      },
+      "hp": {
+        "max": 6,
+        "value": 6
+      }
+    }
   },
   "prototypeToken": {
     "name": "Gnoll Cavalry",

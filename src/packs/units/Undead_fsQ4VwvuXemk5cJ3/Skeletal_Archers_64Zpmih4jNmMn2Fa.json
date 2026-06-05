@@ -19,18 +19,14 @@
     "dmg": 1,
     "mov": 1,
     "tier": 1,
-    "size": {
-      "max": 4,
-      "value": 6
-    },
     "attributes": {
       "movement": {
         "units": "ft",
         "walk": 5
       },
       "hp": {
-        "max": 0,
-        "value": 0
+        "max": 4,
+        "value": 6
       }
     },
     "config": false,
