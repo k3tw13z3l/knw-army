@@ -452,6 +452,17 @@ Hooks.once("init", () => {
   // Bypass dnd5e's calculateDamage for warfare actors — the warfare HP system
   // doesn't have the dnd5e fields (temp, traits, etc.) that calculateDamage expects.
   const ActorClass = getDocumentClass("Actor");
+
+  // Bypass dnd5e's _preUpdate for warfare actors. dnd5e's _preUpdate silently swallows
+  // updates for fields it can't process (ability scores, HP, resources, etc.) when the
+  // actor lacks the expected dnd5e system shape. Use Foundry's base implementation instead.
+  const _origPreUpdate = ActorClass.prototype._preUpdate;
+  const _basePreUpdate = Object.getPrototypeOf(ActorClass.prototype)._preUpdate;
+  ActorClass.prototype._preUpdate = async function(changed, options, user) {
+    if (this.type !== typeWarfare) return _origPreUpdate.call(this, changed, options, user);
+    return _basePreUpdate?.call(this, changed, options, user);
+  };
+
   const _origModifyTokenAttribute = ActorClass.prototype.modifyTokenAttribute;
   ActorClass.prototype.modifyTokenAttribute = async function(attribute, value, isDelta, isBar) {
     if (this.type !== typeWarfare) return _origModifyTokenAttribute.call(this, attribute, value, isDelta, isBar);
