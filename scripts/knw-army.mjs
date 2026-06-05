@@ -20,7 +20,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
   static DEFAULT_OPTIONS = {
     classes: ["dnd5e", "sheet", "actor", "warfare"],
     position: { width: 748, height: 641 },
-    form: { submitOnChange: true },
+    form: { handler: WarfareSheet.#onSubmit, submitOnChange: true },
     dragDrop: [{ dropSelector: "form" }],
     actions: {
       rollStat: WarfareSheet.#rollStat,
@@ -35,6 +35,10 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
       template: "modules/knw-army/templates/warfare-sheet.hbs"
     }
   };
+
+  static async #onSubmit(event, form, formData) {
+    await this.document.update(formData.object);
+  }
 
   /** @override */
   async _prepareContext(options) {
