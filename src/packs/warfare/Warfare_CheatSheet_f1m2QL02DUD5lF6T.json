@@ -1,0 +1,142 @@
+{
+  "folder": null,
+  "name": "Warfare CheatSheet",
+  "flags": {},
+  "pages": [
+    {
+      "type": "pdf",
+      "name": "CheatSheet",
+      "_id": "ZkqCXTgdFPtZgiMk",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": "shared_media/Assets/warfare/mcdm-warfare.pdf",
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550825727,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!f1m2QL02DUD5lF6T.ZkqCXTgdFPtZgiMk"
+    },
+    {
+      "sort": 100000,
+      "name": "Exposed flowchart",
+      "type": "text",
+      "_id": "BcvN0mpMj5IY824D",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p><img src=\"shared_media/Assets/warfare/exposedflowchart.jpeg\" width=\"1638\" height=\"1366\" /><img src=\"shared_media/Assets/warfare/Exposed.webp\" width=\"742\" height=\"654\" /></p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550825740,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!f1m2QL02DUD5lF6T.BcvN0mpMj5IY824D"
+    },
+    {
+      "sort": 200000,
+      "name": "Cheat sheet - 2",
+      "type": "text",
+      "_id": "lz2BtoFJJF0yEWut",
+      "system": {},
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p><strong>WARFARE CHEAT SHEET</strong></p>\n<p><strong>UNITS</strong></p>\n<p><strong>Units</strong> can be Infantry (melee soldiers) Artillery (ranged soldiers), Cavalry (mounted soldiers) or Flying.</p>\n<p><strong>Unit stats are:</strong> <strong>ATK</strong> (Attack bonus), <strong>POW</strong> (damage bonus on a hit), <strong>DEF</strong>(resistance to ATK), <strong>TOU</strong> (resistance to POW), <strong>MOR</strong>(resistance to being diminished and battle magic) and <strong>COM</strong> (bonus to doing maneuvers). <strong># of Attacks</strong> is the number of attacks the unit can make on a turn. <strong>DMG</strong> is the casualties inflicted by a POW test after a successful attack, usually 1.</p>\n<p>Units have a <strong>casualty die</strong> (usually D6), which is decremented whenever they take casualties. Units also have Traits that give them certain bonuses or abilities.</p>\n<p><strong>INITIATIVE AND DEPLOYMENT</strong></p>\n<p>Each commander rolls initiative as normal. Deployment happens in reverse initiative order (lowest initiative places units first). <strong>Infantry</strong> can be placed in any rank. <strong>Archers and Siege Weapons</strong> can be placed in the Centre. <strong>Flying Units and Cavalry</strong> are not placed on the grid. They are placed to one side, because their ability to attack is not limited by position.</p>\n<p><strong>YOUR TURN</strong></p>\n<p>On your turn, you can command all your units. Infantry and Artillery units can Move, use an Action (Attack, Battle Magic, or some Maneuvers), and use a bonus action if it has one. Units also have reactions they can use to react to something that happens, on their turns or others’ turns.</p>\n<p><strong>ATTACKING</strong></p>\n<p><strong>Infantry</strong> can attack any unit that is in an adjacent square. <strong>Archers, Flying Units and Siege Weapons</strong> can attack any unit on the field, including flying units and cavalry. <strong>Cavalry</strong> can attack any unit that is <strong>exposed</strong>. A unit is exposed if it is in the Rear rank, either of the columns at the edge of the grid, or in the Vanguard with no other units between it and the edge of the board. If it is in the reserve rank or the centre rank, it is only exposed if there are no friendly units in the Vanguard and Rear ranks.</p>\n<p><strong>To Attack:</strong> roll a D20 and add your ATK bonus. If you beat the target’s DEF score, they take one casualty. On a successful attack, you roll a D20 and add your POW bonus. If you beat the target's TOU score, they take a number of casualties equal to your unit’s DMG value (usually 1). If the unit being attacked is reduced to half its casualty die, it is <strong>Diminished</strong> and must make a DC13 MOR test or take another casualty.</p>\n<p><strong>MANEUVERS</strong> are done by making COM tests against a DC. Below are some common ones.</p>\n<p><strong>Follow Up -</strong> INFANTRY - As a reaction to an opposed unit adjacent to this unit breaking or moving out of its space, this unit makes a DC 8 COM test. On a success, this unit moves into the opposed unit’s former space.</p>\n<p><strong>Withdraw:</strong> INFANTRY AND ARTILLERY <strong>-</strong> As a reaction to failing a Morale test, this unit can move back into an empty space instead of suffering a casualty. If there is no empty space behind this unit, it cannot use this maneuver.</p>\n<p><strong>Set for Charge:</strong> ALL INFANTRY - As a reaction to suffering a casualty from a cavalry or aerial unit, this unit makes a DC 13 COM test. On a success, the attacking unit suffers 1 casualty.</p>\n<p><strong>BATTLE MAGIC</strong></p>\n<p>When a Unit is attacked by Battle Magic, it makes a DC13 MOR test; on a failure it takes 1 casualty. Then the rest of the effects of the magic as written resolve.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "ownership": {
+        "default": -1,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "13.348",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!f1m2QL02DUD5lF6T.lz2BtoFJJF0yEWut"
+    }
+  ],
+  "ownership": {
+    "default": 2,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460012112,
+    "modifiedTime": 1776550825703,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_id": "f1m2QL02DUD5lF6T",
+  "sort": 0,
+  "categories": [],
+  "_key": "!journal!f1m2QL02DUD5lF6T"
+}

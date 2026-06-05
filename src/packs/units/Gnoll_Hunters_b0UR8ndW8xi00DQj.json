@@ -1,0 +1,209 @@
+{
+  "folder": null,
+  "name": "Gnoll Hunters",
+  "type": "knw-army.warfare",
+  "_id": "b0UR8ndW8xi00DQj",
+  "img": "shared_media/Portraits/warfare/frostgrave_gnolls_by_devburmak_dahiewa-pre.webp?1744208033282",
+  "system": {
+    "commander": "rai06qK6lZeTN3CA",
+    "ancestry": "gnoll",
+    "experience": "regular",
+    "gear": "light",
+    "type": "infantry",
+    "atk": 5,
+    "def": 14,
+    "pow": 2,
+    "tou": 12,
+    "mor": 3,
+    "com": 0,
+    "attacks": 1,
+    "dmg": 1,
+    "mov": 1,
+    "tier": 2,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "config": false,
+    "diminished": false
+  },
+  "prototypeToken": {
+    "name": "Gnoll Hunters",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": true,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/gnoll_hunters.token.webp?1744208033282",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [
+    {
+      "_id": "mTBnTdgwDZtkPtBa",
+      "name": "Scouts",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 800000,
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>This unit can deploy into the rear rank of an opposed army. </p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "scouts",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.zYGv9Q3RzmcnmgIi",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550751828,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!b0UR8ndW8xi00DQj.mTBnTdgwDZtkPtBa"
+    }
+  ],
+  "effects": [],
+  "sort": 300000,
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Actor.b0UR8ndW8xi00DQj",
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460190081,
+    "modifiedTime": 1744550187165,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!actors!b0UR8ndW8xi00DQj"
+}

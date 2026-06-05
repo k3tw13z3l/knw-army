@@ -1,0 +1,144 @@
+{
+  "folder": null,
+  "name": "Elf Infantry",
+  "type": "knw-army.warfare",
+  "_id": "3a8ZDoPUSABzdi8N",
+  "img": "shared_media/Portraits/warfare/elfinfantry01.webp?1743890741096",
+  "system": {
+    "commander": "dpz9Qw9UaxepvU6V",
+    "ancestry": "elf",
+    "experience": "regular",
+    "gear": "light",
+    "type": "infantry",
+    "atk": 4,
+    "def": 12,
+    "pow": 2,
+    "tou": 12,
+    "mor": 0,
+    "com": 1,
+    "attacks": 1,
+    "dmg": 1,
+    "mov": 1,
+    "tier": 1,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "config": false,
+    "diminished": false
+  },
+  "prototypeToken": {
+    "name": "Elf Infantry",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": true,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "shared_media/Tokens/warfare/infantryelf.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 2,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Actor.3a8ZDoPUSABzdi8N",
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460182072,
+    "modifiedTime": 1744460182072,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!actors!3a8ZDoPUSABzdi8N"
+}

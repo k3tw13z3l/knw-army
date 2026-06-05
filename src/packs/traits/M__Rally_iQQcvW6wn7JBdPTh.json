@@ -1,0 +1,65 @@
+{
+  "_id": "iQQcvW6wn7JBdPTh",
+  "name": "M: Rally",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": null,
+  "sort": 600000,
+  "flags": {
+    "core": {},
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>After the battle, this broken unit makes a DC 13 Morale test (no action required). On a success, the unit reforms with 1 casualty. If a 20 is rolled on the d20 for the test, the unit reforms with 2 casualties. On a failure, the broken unit disbands. </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "broken Unit",
+    "identifier": "m-rally",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": "Item.VcMG51tcuLP5yEM2",
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460246762,
+    "modifiedTime": 1776550752818,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!iQQcvW6wn7JBdPTh"
+}

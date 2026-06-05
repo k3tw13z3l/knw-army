@@ -1,0 +1,273 @@
+{
+  "folder": null,
+  "name": "\"Imran Curunir Archers\"",
+  "type": "knw-army.warfare",
+  "_id": "RKHgFJJqdQgjVakf",
+  "img": "shared_media/Portraits/warfare/woodelfarch.webp",
+  "system": {
+    "commander": "dpz9Qw9UaxepvU6V",
+    "ancestry": "elf",
+    "experience": "regular",
+    "gear": "light",
+    "type": "artillery",
+    "atk": 5,
+    "def": 12,
+    "pow": 3,
+    "tou": 10,
+    "mor": 0,
+    "com": 0,
+    "attacks": 1,
+    "dmg": 1,
+    "mov": 1,
+    "tier": 2,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "config": false,
+    "diminished": false
+  },
+  "prototypeToken": {
+    "name": "\"Imran Curunir Woodelf\"",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "shared_media/Tokens/warfare/imrancurunir.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [
+    {
+      "_id": "pPUBc78Eou6615wq",
+      "name": "Guerillas",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>When this unit succeeds on an Attack test against any opposed infantry or artillery unit (but not siege weapons), that unit is disoriented. </p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "guerillas",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.760e9T8hYFAFvm7c",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550751754,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!RKHgFJJqdQgjVakf.pPUBc78Eou6615wq"
+    },
+    {
+      "_id": "kH2eDGOZhcxCr52w",
+      "name": "Mobile",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 700000,
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>This unit has advantage on the Command test when using the Follow Up maneuver, and can move back 2 spaces when using the Withdraw maneuver. </p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "mobile",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.DuXatMDrCZsOJyUi",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": 1776550751767,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!RKHgFJJqdQgjVakf.kH2eDGOZhcxCr52w"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Actor.RKHgFJJqdQgjVakf",
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460182072,
+    "modifiedTime": 1744460182072,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!actors!RKHgFJJqdQgjVakf"
+}

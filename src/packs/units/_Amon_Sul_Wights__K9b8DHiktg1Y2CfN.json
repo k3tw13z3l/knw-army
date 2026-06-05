@@ -1,0 +1,292 @@
+{
+  "folder": null,
+  "name": "\"Amon Sul Wights\"",
+  "type": "knw-army.warfare",
+  "img": "shared_media/Portraits/warfare/amon_sul_wights.webp",
+  "system": {
+    "commander": "FF9pgtrKjyBsfpWL",
+    "ancestry": "undead",
+    "experience": "veteran",
+    "gear": "heavy",
+    "type": "infantry",
+    "atk": 4,
+    "def": 13,
+    "pow": 4,
+    "tou": 13,
+    "mor": 3,
+    "com": 2,
+    "attacks": 1,
+    "dmg": 1,
+    "mov": 1,
+    "tier": 2,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "attributes": {
+      "movement": {
+        "units": "ft",
+        "walk": 5
+      },
+      "hp": {
+        "max": 0,
+        "value": 0
+      }
+    },
+    "config": false,
+    "diminished": false,
+    "battles": 0
+  },
+  "prototypeToken": {
+    "name": "\"Amon Sul Wights\"",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "shared_media/Tokens/warfare/amon_sul_wights.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "wall-height": {
+        "tokenHeight": 0
+      },
+      "patrol": {
+        "enablePatrol": false,
+        "enableSpotting": false,
+        "makePatroller": false,
+        "multiPath": false,
+        "patrolPathName": "",
+        "pathNodeIndex": "0"
+      },
+      "tagger": {},
+      "monks-tokenbar": {
+        "include": "default"
+      },
+      "tokencover": {
+        "maximumCoverGrant": 1
+      },
+      "token-variants": {
+        "randomImgDefault": "",
+        "disableHUDButton": false
+      },
+      "monks-combat-marker": {
+        "token-highlight-scale": 1.5,
+        "token-combat-animation": "",
+        "token-highlight": ""
+      },
+      "monks-bloodsplats": {
+        "bloodsplat-type": "",
+        "bloodsplat-colour": ""
+      },
+      "aedifs-tactical-grid": {
+        "viewDistance": null,
+        "viewShape": "",
+        "color": ""
+      },
+      "elevation-drag-ruler": {
+        "selectedSpeed": "auto",
+        "hasBonusDash": false,
+        "hideSpeedButton": false
+      },
+      "Rideable": {
+        "issetRideableFlag": false,
+        "MaxRiderFlag": null,
+        "CustomRidingheightFlag": null,
+        "UseRidingHeightFlag": true,
+        "RidersScaleFlag": 1,
+        "RiderPositioningFlag": "RowPlacement",
+        "RiderOffsetFlag": [
+          0,
+          0
+        ],
+        "GrapplePlacementFlag": "RowBelow",
+        "TokenFormFlag": "TokenFormCircle",
+        "InsideMovementFlag": false,
+        "SpawnRidersFlag": "",
+        "WorldMEffectOverrideFlag": false,
+        "MountingEffectsFlag": "",
+        "SelfApplyEffectsFlag": false,
+        "forMountEffectsFlag": "",
+        "canbeGrappledFlag": true,
+        "GrapplingEffectsFlag": "",
+        "CanbePilotedFlag": false,
+        "CheckPilotedCollisionFlag": false,
+        "PilotedbyDefaultFlag": false
+      },
+      "healthEstimate": {
+        "dontMarkDead": false,
+        "hideHealthEstimate": false,
+        "hideName": false
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [
+    {
+      "folder": null,
+      "name": "R: Warbred",
+      "type": "feat",
+      "_id": "mYTLsf801pCimq66",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p class=\"p2\">As a reaction to succeeding on a Power test as part of an attack, this unit can make a DC 10 Command test. On a success, this unit can attack again.<span class=\"Apple-converted-space\"> </span></p>",
+          "chat": ""
+        },
+        "source": {
+          "rules": "2014",
+          "revision": 1
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "identifier": "r-warbred",
+        "activities": {},
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "effects": [],
+      "sort": 1100000,
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.knw-army.traits.Item.EqyWLOGtplh6qTLH",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": null,
+        "modifiedTime": 1776550751656,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!K9b8DHiktg1Y2CfN.mYTLsf801pCimq66"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1745156950016,
+    "modifiedTime": 1745156964933,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_id": "K9b8DHiktg1Y2CfN",
+  "sort": 100000,
+  "_key": "!actors!K9b8DHiktg1Y2CfN"
+}

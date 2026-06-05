@@ -1,0 +1,227 @@
+{
+  "folder": null,
+  "name": "Skeletal Cavalry",
+  "type": "knw-army.warfare",
+  "img": "shared_media/Portraits/warfare/skeletalcavalry.webp",
+  "system": {
+    "commander": "FF9pgtrKjyBsfpWL",
+    "ancestry": "undead",
+    "experience": "regular",
+    "gear": "light",
+    "type": "cavalry",
+    "atk": 3,
+    "def": 11,
+    "pow": 2,
+    "tou": 10,
+    "mor": 0,
+    "com": 0,
+    "attacks": 1,
+    "dmg": 2,
+    "mov": 1,
+    "tier": 1,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "attributes": {
+      "movement": {
+        "units": "ft",
+        "walk": 5
+      },
+      "hp": {
+        "max": 0,
+        "value": 0
+      }
+    },
+    "config": false,
+    "diminished": false,
+    "battles": 0
+  },
+  "prototypeToken": {
+    "name": "Skeletal Cavalry",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": true,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "shared_media/Tokens/warfare/skeletalcavalry.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "wall-height": {
+        "tokenHeight": 0
+      },
+      "patrol": {
+        "enablePatrol": false,
+        "enableSpotting": false,
+        "makePatroller": false,
+        "multiPath": false,
+        "patrolPathName": "",
+        "pathNodeIndex": "0"
+      },
+      "tagger": {},
+      "monks-tokenbar": {
+        "include": "default"
+      },
+      "tokencover": {
+        "maximumCoverGrant": 1
+      },
+      "token-variants": {
+        "randomImgDefault": "",
+        "disableHUDButton": false
+      },
+      "monks-combat-marker": {
+        "token-highlight-scale": 1.5,
+        "token-combat-animation": "",
+        "token-highlight": ""
+      },
+      "monks-bloodsplats": {
+        "bloodsplat-type": "",
+        "bloodsplat-colour": ""
+      },
+      "aedifs-tactical-grid": {
+        "viewDistance": null,
+        "viewShape": "",
+        "color": ""
+      },
+      "elevation-drag-ruler": {
+        "selectedSpeed": "auto",
+        "hasBonusDash": false,
+        "hideSpeedButton": false
+      },
+      "Rideable": {
+        "issetRideableFlag": false,
+        "MaxRiderFlag": null,
+        "CustomRidingheightFlag": null,
+        "UseRidingHeightFlag": true,
+        "RidersScaleFlag": 1,
+        "RiderPositioningFlag": "RowPlacement",
+        "RiderOffsetFlag": [
+          0,
+          0
+        ],
+        "GrapplePlacementFlag": "RowBelow",
+        "TokenFormFlag": "TokenFormCircle",
+        "InsideMovementFlag": false,
+        "SpawnRidersFlag": "",
+        "WorldMEffectOverrideFlag": false,
+        "MountingEffectsFlag": "",
+        "SelfApplyEffectsFlag": false,
+        "forMountEffectsFlag": "",
+        "canbeGrappledFlag": true,
+        "GrapplingEffectsFlag": "",
+        "CanbePilotedFlag": false,
+        "CheckPilotedCollisionFlag": false,
+        "PilotedbyDefaultFlag": false
+      },
+      "healthEstimate": {
+        "dontMarkDead": false,
+        "hideHealthEstimate": false,
+        "hideName": false
+      }
+    },
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [],
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1745156961045,
+    "modifiedTime": 1745156969660,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_id": "9nq9Q7Sze60cj9SS",
+  "sort": 300000,
+  "_key": "!actors!9nq9Q7Sze60cj9SS"
+}

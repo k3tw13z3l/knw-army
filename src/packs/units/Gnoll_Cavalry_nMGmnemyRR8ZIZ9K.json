@@ -1,0 +1,201 @@
+{
+  "folder": null,
+  "name": "Gnoll Cavalry",
+  "type": "knw-army.warfare",
+  "img": "shared_media/Portraits/warfare/gnollrider.webp",
+  "system": {
+    "commander": "RcE7MXxZaL9BWTFc",
+    "ancestry": "gnoll",
+    "experience": "regular",
+    "gear": "light",
+    "type": "cavalry",
+    "atk": 4,
+    "def": 12,
+    "pow": 2,
+    "tou": 10,
+    "mor": 1,
+    "com": 0,
+    "attacks": 1,
+    "dmg": 2,
+    "mov": 1,
+    "tier": 1,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "config": false,
+    "diminished": false
+  },
+  "prototypeToken": {
+    "name": "Gnoll Cavalry",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": true,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "shared_media/Portraits/warfare/hyena-hunter.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [
+    {
+      "folder": null,
+      "name": "Dire Hyena Mounts",
+      "type": "feat",
+      "_id": "xrzkrMfi9833EgpI",
+      "img": "systems/dnd5e/icons/svg/items/feature.svg",
+      "system": {
+        "activities": {},
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "description": {
+          "value": "<p>This unit has advantage on Attack tests against diminished units.</p>",
+          "chat": ""
+        },
+        "identifier": "new-item",
+        "source": {
+          "revision": 1,
+          "rules": "2024"
+        },
+        "advancement": [],
+        "cover": null,
+        "crewed": false,
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "type": {
+          "value": "",
+          "subtype": ""
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.knw-army.traits.Item.WBJFrhJGZaJuqn21",
+        "duplicateSource": null,
+        "coreVersion": "13.348",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      },
+      "_key": "!actors.items!nMGmnemyRR8ZIZ9K.xrzkrMfi9833EgpI"
+    }
+  ],
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744550177489,
+    "modifiedTime": 1744550187165,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_id": "nMGmnemyRR8ZIZ9K",
+  "sort": 200000,
+  "_key": "!actors!nMGmnemyRR8ZIZ9K"
+}

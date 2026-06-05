@@ -1,0 +1,64 @@
+{
+  "_id": "760e9T8hYFAFvm7c",
+  "name": "Guerillas",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": null,
+  "sort": 400000,
+  "flags": {
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>When this unit succeeds on an Attack test against any opposed infantry or artillery unit (but not siege weapons), that unit is disoriented. </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "",
+    "identifier": "guerillas",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460262073,
+    "modifiedTime": 1776550752117,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!760e9T8hYFAFvm7c"
+}

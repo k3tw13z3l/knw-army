@@ -1,0 +1,408 @@
+{
+  "name": "Human Levies",
+  "type": "knw-army.warfare",
+  "img": "shared_media/Portraits/warfare/humninf.webp?1743890189849",
+  "system": {
+    "commander": "Qx3N7wSDb8UnFPcP",
+    "ancestry": "human",
+    "experience": "levy",
+    "gear": "light",
+    "type": "infantry",
+    "atk": 2,
+    "def": 10,
+    "pow": 2,
+    "tou": 12,
+    "mor": -1,
+    "com": 0,
+    "attacks": 1,
+    "dmg": 1,
+    "mov": 1,
+    "tier": 1,
+    "size": {
+      "max": 6,
+      "value": 6
+    },
+    "config": false,
+    "diminished": false
+  },
+  "prototypeToken": {
+    "name": "Human Levies",
+    "displayName": 30,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": true,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/human_militia.token.webp?1743890189849",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "width",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "darkvision",
+      "color": null,
+      "attenuation": 0,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "items": [
+    {
+      "folder": null,
+      "name": "R: Set for Charge",
+      "type": "feat",
+      "_id": "s3XpGLIHSFdQf2Kr",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p class=\"p2\">As a reaction to suffering a casualty from a successful Attack test from a cavalry or aerial unit that is not using the Archers trait, this unit makes a DC 13 Command test. On a success, the attacking unit suffers 1 casualty.<span class=\"Apple-converted-space\"> </span></p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "revision": 1,
+          "rules": "2014"
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "reaction",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "r-set-for-charge",
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "flags": {
+        "tidy5e-sheet": {},
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.army.Item.4ElosgFeqakOreT3",
+        "duplicateSource": null,
+        "coreVersion": "13.348",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      },
+      "_key": "!actors.items!OQtMngB8R8uxOPIO.s3XpGLIHSFdQf2Kr"
+    },
+    {
+      "_id": "jzJ3l1sNA3wVx92F",
+      "name": "R: Follow Up",
+      "type": "feat",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "flags": {
+        "core": {},
+        "dnd5e": {
+          "riders": {
+            "activity": []
+          }
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>As a reaction to an opposed unit adjacent to this unit breaking or moving out of its space, this unit makes a DC 8 Command test. On a success, this unit moves into the opposed unit’s former space. </p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "p109",
+          "revision": 1,
+          "rules": "2014"
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "",
+          "subtype": ""
+        },
+        "requirements": "Infantry",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "reaction",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "r-follow-up",
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": []
+      },
+      "ownership": {
+        "default": 0,
+        "YbxrIigtTIkCJ5a4": 3
+      },
+      "_stats": {
+        "compendiumSource": "Item.VcMG51tcuLP5yEM2",
+        "duplicateSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.2.5",
+        "createdTime": null,
+        "modifiedTime": 1776550751722,
+        "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+        "exportSource": null
+      },
+      "_key": "!actors.items!OQtMngB8R8uxOPIO.jzJ3l1sNA3wVx92F"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 2,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.348",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744548422926,
+    "modifiedTime": 1744548422926,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_id": "OQtMngB8R8uxOPIO",
+  "sort": 0,
+  "_key": "!actors!OQtMngB8R8uxOPIO"
+}

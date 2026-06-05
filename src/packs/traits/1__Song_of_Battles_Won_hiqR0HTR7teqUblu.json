@@ -1,0 +1,65 @@
+{
+  "_id": "hiqR0HTR7teqUblu",
+  "name": "1: Song of Battles Won",
+  "type": "feat",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": null,
+  "sort": 100000,
+  "flags": {
+    "core": {},
+    "tidy5e-sheet": {},
+    "dnd5e": {
+      "riders": {
+        "activity": []
+      }
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>An opposed unit has disadvantage on Attack tests against any unit this commander controls if that defending unit has fewer casualties than the attacker </p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2014",
+      "revision": 1
+    },
+    "cover": null,
+    "crewed": false,
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "",
+      "subtype": ""
+    },
+    "requirements": "Bard",
+    "identifier": "1-song-of-battles-won",
+    "activities": {},
+    "advancement": [],
+    "enchant": {},
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": []
+  },
+  "ownership": {
+    "default": 0,
+    "YbxrIigtTIkCJ5a4": 3
+  },
+  "_stats": {
+    "compendiumSource": "Item.VcMG51tcuLP5yEM2",
+    "duplicateSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "createdTime": 1744460248963,
+    "modifiedTime": 1776550752775,
+    "lastModifiedBy": "YbxrIigtTIkCJ5a4",
+    "exportSource": null
+  },
+  "_key": "!items!hiqR0HTR7teqUblu"
+}
