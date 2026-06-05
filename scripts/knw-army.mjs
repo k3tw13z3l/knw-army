@@ -638,18 +638,20 @@ Hooks.on("ready", () => {
 Hooks.on("updateActor", (actor, changed, options, userId) => {
   if (actor.type !== typeWarfare) return;
   if (options._knwDiminishedUpdate) return;
-  if (!foundry.utils.hasProperty(changed, "system.attributes.hp.value")) return;
-  if (game.user.id !== userId) return;
+
+  const flat = foundry.utils.flattenObject(changed);
+  if (!("system.attributes.hp.value" in flat)) return;
 
   const { hp } = actor.system.attributes;
   const shouldBeDiminished = hp.value <= hp.max / 2;
   const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[actor.system.ancestry]?.diminishable ?? false;
+  const canWrite = game.users.activeGM?.isSelf ?? game.user.id === userId;
 
   if (shouldBeDiminished && !actor.system.diminished && isDiminishable) {
     ui.notifications.warn(game.i18n.format("KNW.Warfare.Conditions.DiminishedWarning", {name: actor.name}));
-    actor.update({"system.diminished": true}, {render: false, _knwDiminishedUpdate: true});
+    if (canWrite) actor.update({"system.diminished": true}, {_knwDiminishedUpdate: true});
   } else if (!shouldBeDiminished && actor.system.diminished) {
-    actor.update({"system.diminished": false}, {render: false, _knwDiminishedUpdate: true});
+    if (canWrite) actor.update({"system.diminished": false}, {_knwDiminishedUpdate: true});
   }
 });
 
