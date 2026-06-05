@@ -448,6 +448,19 @@ const typeWarfare = "knw-army.warfare";
 Hooks.once("init", () => {
   foundry.utils.mergeObject(CONFIG, KNWCONFIG);
 
+  // Bypass dnd5e's calculateDamage for warfare actors — the warfare HP system
+  // doesn't have the dnd5e fields (temp, traits, etc.) that calculateDamage expects.
+  const ActorClass = getDocumentClass("Actor");
+  const _origModifyTokenAttribute = ActorClass.prototype.modifyTokenAttribute;
+  ActorClass.prototype.modifyTokenAttribute = async function(attribute, value, isDelta, isBar) {
+    if (this.type !== typeWarfare) return _origModifyTokenAttribute.call(this, attribute, value, isDelta, isBar);
+    const attr = foundry.utils.getProperty(this.system, attribute);
+    if (!attr || typeof attr !== "object") return _origModifyTokenAttribute.call(this, attribute, value, isDelta, isBar);
+    let newValue = isDelta ? (attr.value ?? 0) + value : value;
+    newValue = Math.round(Math.min(Math.max(newValue, 0), attr.max ?? Infinity));
+    return this.update({ [`system.${attribute}.value`]: newValue });
+  };
+
   // Stamp WARFARE_STUB onto sourcedItems for every warfare actor so that
   // dnd5e's ready hook (which calls actor.sourcedItems._redirectKeys()) never throws.
   const _origPrepareData = Actor.prototype.prepareData;
