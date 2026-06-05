@@ -620,7 +620,7 @@ Hooks.once("init", () => {
     label: "KNW.Sheets.Warfare"
   });
 
-  const warfareConditionRef = "Compendium.knw-army.warfare.JournalEntry.8777M6BFSUG1WO7A";
+  const warfareConditionRef = "Compendium.knw-army.warfare.JournalEntry.8777M6BFSUG1WO7A.JournalEntryPage.4lKAV63EHEC6WzTb";
   Object.assign(CONFIG.DND5E.conditionTypes, {
     broken:       { name: "Broken",       img: "systems/dnd5e/icons/svg/statuses/incapacitated.svg", reference: warfareConditionRef },
     disbanded:    { name: "Disbanded",    img: "systems/dnd5e/icons/svg/statuses/dead.svg",          reference: warfareConditionRef },
