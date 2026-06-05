@@ -447,6 +447,21 @@ Hooks.once("init", () => {
   const _basePreUpdate = Object.getPrototypeOf(ActorClass.prototype)._preUpdate;
   ActorClass.prototype._preUpdate = async function(changed, options, user) {
     if (this.type !== typeWarfare) return _origPreUpdate.call(this, changed, options, user);
+
+    const newHp = foundry.utils.getProperty(changed, "system.attributes.hp.value");
+    if (newHp !== undefined) {
+      const maxHp = foundry.utils.getProperty(changed, "system.attributes.hp.max") ?? this.system.attributes.hp.max;
+      const shouldBeDiminished = newHp <= maxHp / 2;
+      const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[this.system.ancestry]?.diminishable ?? false;
+
+      if (shouldBeDiminished && !this.system.diminished && isDiminishable) {
+        ui.notifications.warn(game.i18n.format("KNW.Warfare.Conditions.DiminishedWarning", {name: this.name}));
+        foundry.utils.setProperty(changed, "system.diminished", true);
+      } else if (!shouldBeDiminished && this.system.diminished) {
+        foundry.utils.setProperty(changed, "system.diminished", false);
+      }
+    }
+
     return _basePreUpdate?.call(this, changed, options, user);
   };
 
@@ -635,22 +650,6 @@ Hooks.on("ready", () => {
   }
 });
 
-Hooks.on("preUpdateActor", (actor, changed, options, userId) => {
-  if (actor.type !== typeWarfare) return;
-  if (!foundry.utils.hasProperty(changed, "system.attributes.hp.value")) return;
-
-  const newHp = foundry.utils.getProperty(changed, "system.attributes.hp.value");
-  const maxHp = foundry.utils.getProperty(changed, "system.attributes.hp.max") ?? actor.system.attributes.hp.max;
-  const shouldBeDiminished = newHp <= maxHp / 2;
-  const isDiminishable = CONFIG.KNW.CHOICES.ANCESTRY[actor.system.ancestry]?.diminishable ?? false;
-
-  if (shouldBeDiminished && !actor.system.diminished && isDiminishable) {
-    ui.notifications.warn(game.i18n.format("KNW.Warfare.Conditions.DiminishedWarning", {name: actor.name}));
-    foundry.utils.setProperty(changed, "system.diminished", true);
-  } else if (!shouldBeDiminished && actor.system.diminished) {
-    foundry.utils.setProperty(changed, "system.diminished", false);
-  }
-});
 
 Hooks.on("renderTokenConfig5e", (app, html, context, options) => {
   switch (app.actor.type) {
