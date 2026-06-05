@@ -59,6 +59,7 @@
       "label": "Warfare Rules",
       "path": "packs/warfare",
       "type": "JournalEntry",
+      "system": "dnd5e",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -69,6 +70,7 @@
       "label": "Units",
       "path": "packs/units",
       "type": "Actor",
+      "system": "dnd5e",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -79,6 +81,7 @@
       "label": "Unit Traits",
       "path": "packs/traits",
       "type": "Item",
+      "system": "dnd5e",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
