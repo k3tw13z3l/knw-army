@@ -633,6 +633,13 @@ Hooks.on("ready", () => {
       status.hud = { actorTypes: nonWarfareTypes };
     }
   }
+
+  // dnd5e's ready hook has already built statusEffects from conditionTypes.
+  // Remove warfare entries from conditionTypes now so the character sheet
+  // conditions widget (which reads conditionTypes dynamically) doesn't show them.
+  for (const id of warfareConditions) {
+    delete CONFIG.DND5E.conditionTypes[id];
+  }
 });
 
 Hooks.on("updateActor", (actor, changed, options, userId) => {
