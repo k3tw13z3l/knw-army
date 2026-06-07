@@ -152,8 +152,11 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
   _onRender(context, options) {
     super._onRender(context, options);
     this._commanderContextMenu ??= new foundry.applications.ux.ContextMenu(this.element, ".armyUnit-commander", this.commanderMenu, { jQuery: false });
+    this._fieldListenerAC?.abort();
+    this._fieldListenerAC = new AbortController();
+    const { signal } = this._fieldListenerAC;
     for (const span of this.element.querySelectorAll("span.armyUnit-select[data-field]")) {
-      span.addEventListener("contextmenu", (ev) => this._onFieldContextMenu(ev));
+      span.addEventListener("contextmenu", (ev) => this._onFieldContextMenu(ev), { signal });
     }
     const form = this.element.querySelector("form");
     if (form) {
