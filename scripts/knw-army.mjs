@@ -27,6 +27,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
       toggleConfig: WarfareSheet.#toggleConfig,
       toggleTrait: WarfareSheet.#toggleExpandState,
       deleteTrait: WarfareSheet.#deleteItem,
+      editImage: WarfareSheet.#editImage,
     }
   };
 
@@ -196,6 +197,17 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     event.stopPropagation();
     const itemId = target.closest(".onetraitbox").dataset.itemId;
     await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
+  }
+
+  static async #editImage(event, target) {
+    const attr = target.dataset.edit;
+    const current = foundry.utils.getProperty(this.document, attr);
+    const fp = new FilePicker({
+      type: "image",
+      current,
+      callback: path => this.document.update({ [attr]: path }),
+    });
+    fp.browse();
   }
 
   get commanderMenu() {
