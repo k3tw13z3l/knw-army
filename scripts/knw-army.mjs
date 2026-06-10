@@ -564,6 +564,11 @@ Hooks.once("init", () => {
       };
     }
 
+    /** @override */
+    prepareDerivedData() {
+      this.attributes.hp.effectiveMax = this.attributes.hp.max;
+    }
+
     get casualtyDie() {
       return this.attributes.hp.value;
     }
