@@ -380,6 +380,11 @@ const KNWCONFIG = {
           label: "Gnoll",
           diminishable: true,
           trait: ["Rush","Feast"]
+        },
+        giant: {
+          label: "Giant",
+          diminishable: true,
+          trait: ["Big","Rock!"]
         }
       },
       TIER: {
