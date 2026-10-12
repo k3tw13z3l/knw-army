@@ -104,7 +104,7 @@
   text-align: left;
   font: 900 35px 'Roboto Condensed', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
-  width: 100%;
+  width: calc(100% - 2px);
   box-sizing: border-box;
 }
 
