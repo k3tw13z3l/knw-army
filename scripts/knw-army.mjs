@@ -19,7 +19,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
 
   static DEFAULT_OPTIONS = {
     classes: ["dnd5e", "sheet", "actor", "warfare"],
-    position: { width: 742, height: 641 },
+    position: { width: 700, height: 560 },
     form: { submitOnChange: false },
     dragDrop: [{ dropSelector: "form" }],
     actions: {
