@@ -104,8 +104,9 @@
   text-align: left;
   font: 900 35px 'Roboto Condensed', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
-  width: calc(100% - 2px);
+  width: 100%;
   box-sizing: border-box;
+  padding-block: 4px;
 }
 
 .armyUnit-text {
