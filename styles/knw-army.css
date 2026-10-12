@@ -17,7 +17,7 @@
 }
 
 .dnd5e.sheet.actor.warfare .window-content {
-  padding: 2px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,6 +104,8 @@
   text-align: left;
   font: 900 35px 'Roboto Condensed', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .armyUnit-text {
