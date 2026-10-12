@@ -323,6 +323,7 @@ input.armyUnit-statbonus {
 
 .armyUnit-statname {
   font: 900 25px 'Roboto', sans-serif;
+  color: black;
 }
 
 .armyUnit-statvalue {
