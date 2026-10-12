@@ -29,6 +29,8 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  border: none;
+  outline: none;
 }
 
 .armyUnit {
@@ -469,6 +471,7 @@ input.armyUnit-statbonus {
 }
 
 .armyUnit-tier-text span.armyUnit-select {
+  display: block;
   position: relative;
   top: -27px;
   color: #000000;

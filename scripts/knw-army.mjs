@@ -238,7 +238,7 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
 
     const nav = document.createElement("nav");
     nav.classList.add("context-menu", "knw-choice-menu");
-    nav.style.cssText = "position:fixed; z-index:9999;";
+    nav.style.cssText = "position:fixed; z-index:99999;";
 
     const ol = document.createElement("ol");
     for (const { key, label } of entries) {
@@ -255,9 +255,9 @@ class WarfareSheet extends foundry.applications.api.HandlebarsApplicationMixin(f
     nav.appendChild(ol);
     document.body.appendChild(nav);
 
-    const { clientX, clientY } = event;
-    const top = (clientY + nav.offsetHeight > window.innerHeight) ? clientY - nav.offsetHeight : clientY;
-    const left = (clientX + nav.offsetWidth > window.innerWidth) ? clientX - nav.offsetWidth : clientX;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const top = (rect.bottom + nav.offsetHeight > window.innerHeight) ? rect.top - nav.offsetHeight : rect.bottom;
+    const left = (rect.right + nav.offsetWidth > window.innerWidth) ? rect.right - nav.offsetWidth : rect.left;
     nav.style.top = `${top}px`;
     nav.style.left = `${left}px`;
 
