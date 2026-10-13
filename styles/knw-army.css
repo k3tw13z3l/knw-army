@@ -448,7 +448,7 @@ input.armyUnit-statbonus {
   border-style: solid;
   border-color: #000000;
   border-width: 5px;
-  top: -83px;
+  top: -91px;
   left: 66px;
   width: 52px;
   height: 52px;
@@ -459,7 +459,7 @@ input.armyUnit-statbonus {
 .armyUnit-tier-text {
   color: #dcdddf;
   left: 73px;
-  top: -148px;
+  top: -156px;
   font: 400 16px 'Roboto Slab', sans-serif;
   text-align: center;
   text-transform: uppercase;
